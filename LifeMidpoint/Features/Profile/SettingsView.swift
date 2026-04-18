@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct SettingsView: View {
-    var onMenuTap: () -> Void = {}
-
     @StateObject private var audio = AudioPlayer.shared
     @State private var selectedAmbiance = "自动"
     @State private var selectedNoise = "关闭"
@@ -43,13 +41,6 @@ struct SettingsView: View {
             }
             .background(Color.pageBackground.ignoresSafeArea())
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: onMenuTap) {
-                        Image(systemName: "line.3.horizontal")
-                            .font(.system(size: 18, weight: .medium))
-                            .foregroundStyle(Color.textPrimary)
-                    }
-                }
                 ToolbarItem(placement: .principal) {
                     Text("我的")
                         .font(AppFont.title(18))

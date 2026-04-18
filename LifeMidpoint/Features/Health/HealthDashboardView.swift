@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct HealthDashboardView: View {
-    var onMenuTap: () -> Void = {}
-
     @State private var path: NavigationPath = {
         #if DEBUG
         let raw = ProcessInfo.processInfo.environment["DEBUG_PUSH_HEALTH"] ?? ""
@@ -36,7 +34,7 @@ struct HealthDashboardView: View {
                 .padding(.bottom, 40)
             }
             .background(Color.pageBackground.ignoresSafeArea())
-            .navigationBarHidden(true)
+            .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: HealthRoute.self) { route in
                 switch route {
                 case .period: PeriodTrackingView()
@@ -60,17 +58,10 @@ struct HealthDashboardView: View {
 
     private var header: some View {
         HStack {
-            Button(action: onMenuTap) {
-                Image(systemName: "line.3.horizontal")
-                    .font(.system(size: 18, weight: .medium))
-                    .foregroundStyle(Color.textPrimary)
-            }
-            Spacer()
             Text("身体数据")
-                .font(AppFont.title(18))
+                .font(AppFont.title(22))
                 .foregroundStyle(Color.textPrimary)
             Spacer()
-            Color.clear.frame(width: 18)
         }
         .padding(.vertical, 8)
     }

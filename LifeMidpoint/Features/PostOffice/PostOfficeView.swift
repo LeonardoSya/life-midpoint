@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct PostOfficeView: View {
-    var onMenuTap: () -> Void = {}
-
     @State private var showWriteLetter = false
     @State private var path: NavigationPath = {
         #if DEBUG
@@ -24,7 +22,7 @@ struct PostOfficeView: View {
         NavigationStack(path: $path) {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 12) {
-                    menuBar
+                    postOfficeHeader
                     HeroWriteCard { showWriteLetter = true }
                     NavigationLink(value: PostOfficeRoute.monthlyReport) {
                         SummaryBanner()
@@ -36,7 +34,7 @@ struct PostOfficeView: View {
                 .padding(.horizontal, 24)
             }
             .background(Color.pageBackground.ignoresSafeArea())
-            .navigationBarHidden(true)
+            .toolbar(.hidden, for: .navigationBar)
             .sheet(isPresented: $showWriteLetter) {
                 WriteLetterView()
             }
@@ -58,16 +56,14 @@ struct PostOfficeView: View {
         case monthlyReport
     }
 
-    private var menuBar: some View {
+    private var postOfficeHeader: some View {
         HStack {
-            Button(action: onMenuTap) {
-                Image(systemName: "line.3.horizontal")
-                    .font(.system(size: 18, weight: .medium))
-                    .foregroundStyle(Color.textPrimary)
-                    .padding(8)
-            }
+            Text("邮局")
+                .font(AppFont.title(22))
+                .foregroundStyle(Color.textPrimary)
             Spacer()
         }
+        .padding(.top, 8)
     }
 
     // MARK: - Correspondence

@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct MindHomeView: View {
-    var onMenuTap: () -> Void = {}
-
     private let categories: [(icon: String, name: String)] = [
         ("waveform.path.ecg", "身体与情绪"),
         ("plus.square", "情绪急救"),
@@ -42,13 +40,6 @@ struct MindHomeView: View {
             .background(Color.pageBackground.ignoresSafeArea())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: onMenuTap) {
-                        Image(systemName: "line.3.horizontal")
-                            .font(.system(size: 18, weight: .medium))
-                            .foregroundStyle(Color.textPrimary)
-                    }
-                }
                 ToolbarItem(placement: .principal) {
                     Text("心境")
                         .font(AppFont.title(24))

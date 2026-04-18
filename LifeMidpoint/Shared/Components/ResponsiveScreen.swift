@@ -100,7 +100,11 @@ extension View {
 
 private struct ResponsiveFillModifier: ViewModifier {
     // iOS 17+ containerRelativeFrame: 强制锁定到 nearest container 的实际尺寸,
-    // 即使 children 用 maxWidth.infinity 也能压回正确大小. 这是 Apple 官方推荐.
+    // 同时保留 padding 的 inset 效果. 这是唯一既能压回 maxWidth.infinity 子树
+    // 又不吃掉 padding 的方案.
+    //
+    // 注意: GeometryReader 作为 modifier 会吃掉 padding (让 child frame = geo.size,
+    // 忽略 padding inset), 因此不能用 GeometryReader 实现.
     func body(content: Content) -> some View {
         content.containerRelativeFrame([.horizontal, .vertical])
     }

@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct DiaryView: View {
-    var onMenuTap: () -> Void
-
     @State private var inputText = ""
     @State private var messages: [ChatMessage] = []
     @State private var diaryState: DiaryState = .idle
@@ -14,11 +12,6 @@ struct DiaryView: View {
 
                 VStack(spacing: 0) {
                     Spacer()
-                        .frame(height: 80)
-
-                    menuButton
-
-                    Spacer()
 
                     chatBubbles
                         .padding(.horizontal, 14)
@@ -29,13 +22,13 @@ struct DiaryView: View {
                         .padding(.horizontal, 24)
 
                     diaryReviewLink
-                        .padding(.top, 8)
-                        .padding(.bottom, 40)
+                        .padding(.top, 12)
+                        .padding(.bottom, 28)
                 }
                 .responsiveFill()
             }
             .ignoresSafeArea()
-            .navigationBarHidden(true)
+            .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: DiaryRoute.self) { route in
                 switch route {
                 case .review(let hasRecords): DiaryReviewView(hasRecords: hasRecords)
@@ -77,27 +70,6 @@ struct DiaryView: View {
                 .opacity(0.5)
         }
         .ignoresSafeArea()
-    }
-
-    // MARK: - Menu Button (Figma: left-edge pink-purple tab)
-
-    private var menuButton: some View {
-        HStack {
-            Button(action: onMenuTap) {
-                Image("DiaryMenuIcon")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 30, height: 27)
-                    .frame(width: 63, height: 77)
-                    .background(Color.drawerLavender, in: UnevenRoundedRectangle(
-                        topLeadingRadius: 0,
-                        bottomLeadingRadius: 0,
-                        bottomTrailingRadius: 19,
-                        topTrailingRadius: 19
-                    ))
-            }
-            Spacer()
-        }
     }
 
     // MARK: - Chat Bubbles

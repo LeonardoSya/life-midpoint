@@ -19,7 +19,7 @@ struct RootView: View {
         case .main: MainContainerView()
         case .login: LoginView()
         case .onboarding: OnboardingFlowView()
-        case .diary: DiaryView(onMenuTap: {})
+        case .diary: DiaryView()
         case .diaryReview: DiaryReviewView(hasRecords: true)
         case .diaryReviewEmpty: DiaryReviewView(hasRecords: false)
         case .diaryLoading: DiaryLoadingView()

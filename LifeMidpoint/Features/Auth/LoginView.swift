@@ -11,13 +11,12 @@ struct LoginView: View {
             backgroundLayer
 
             VStack(spacing: 0) {
-                Spacer()
-                    .frame(height: 160)
+                Spacer(minLength: 0)
 
                 titleSection
 
                 Spacer()
-                    .frame(height: 80)
+                    .frame(height: 64)
 
                 inputSection
 
@@ -30,17 +29,16 @@ struct LoginView: View {
                     .padding(.top, AppSpacing.lg)
 
                 Spacer()
+                    .frame(height: 56)
 
                 alternativeLoginSection
 
-                Spacer()
-                    .frame(height: 60)
+                Spacer(minLength: 0)
             }
             .padding(.horizontal, 40)
-            .padding(.bottom, 24)
+            .padding(.vertical, 24)
             .responsiveFill()
         }
-        .ignoresSafeArea()
     }
 
     // MARK: - Background
