@@ -1,0 +1,23 @@
+{
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/App/RootView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/RootView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/RootView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/RootView.dia",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/RootView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/RootView.swiftdeps"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Mind/Components/PracticeRows.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PracticeRows.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PracticeRows.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PracticeRows.dia",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PracticeRows.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PracticeRows.swiftdeps"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Mind/PsychologyCardView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PsychologyCardView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PsychologyCardView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PsychologyCardView.dia",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PsychologyCardView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PsychologyCardView.swiftdeps"
+  }
+}

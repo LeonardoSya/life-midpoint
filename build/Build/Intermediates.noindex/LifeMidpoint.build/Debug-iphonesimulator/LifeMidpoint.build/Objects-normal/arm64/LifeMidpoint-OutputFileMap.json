@@ -1,0 +1,599 @@
+{
+  "" : {
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LifeMidpoint-primary.dia",
+    "emit-module-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LifeMidpoint-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LifeMidpoint-primary-emit-module.dia",
+    "pch" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LifeMidpoint-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LifeMidpoint-primary.swiftdeps"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/App/AppStateManager.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppStateManager.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppStateManager.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppStateManager.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppStateManager.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppStateManager.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppStateManager.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppStateManager.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppStateManager~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/App/DebugPreview.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DebugPreview.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DebugPreview.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DebugPreview.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DebugPreview.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DebugPreview.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DebugPreview.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DebugPreview.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DebugPreview~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/App/LifeMidpointApp.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LifeMidpointApp.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LifeMidpointApp.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LifeMidpointApp.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LifeMidpointApp.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LifeMidpointApp.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LifeMidpointApp.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LifeMidpointApp.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LifeMidpointApp~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/App/RootView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/RootView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/RootView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/RootView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/RootView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/RootView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/RootView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/RootView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/RootView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Auth/LoginView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LoginView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LoginView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LoginView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LoginView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LoginView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LoginView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LoginView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LoginView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Diary/DiaryLoadingView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryLoadingView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryLoadingView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryLoadingView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryLoadingView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryLoadingView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryLoadingView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryLoadingView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryLoadingView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Diary/DiaryReviewView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryReviewView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryReviewView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryReviewView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryReviewView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryReviewView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryReviewView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryReviewView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryReviewView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Diary/DiaryStateMachine.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryStateMachine.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryStateMachine.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryStateMachine.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryStateMachine.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryStateMachine.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryStateMachine.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryStateMachine.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryStateMachine~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Diary/DiarySummaryView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiarySummaryView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiarySummaryView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiarySummaryView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiarySummaryView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiarySummaryView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiarySummaryView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiarySummaryView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiarySummaryView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Diary/DiaryView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DiaryView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Diary/EmotionDetailView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionDetailView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionDetailView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionDetailView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionDetailView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionDetailView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionDetailView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionDetailView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionDetailView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Diary/EmotionPickerSheet.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionPickerSheet.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionPickerSheet.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionPickerSheet.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionPickerSheet.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionPickerSheet.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionPickerSheet.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionPickerSheet.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/EmotionPickerSheet~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Health/HealthDashboardView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthDashboardView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthDashboardView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthDashboardView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthDashboardView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthDashboardView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthDashboardView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthDashboardView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthDashboardView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Health/HealthSummaryView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthSummaryView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthSummaryView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthSummaryView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthSummaryView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthSummaryView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthSummaryView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthSummaryView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HealthSummaryView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Health/MedicationViews.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MedicationViews.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MedicationViews.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MedicationViews.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MedicationViews.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MedicationViews.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MedicationViews.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MedicationViews.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MedicationViews~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Health/PeriodTrackingView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PeriodTrackingView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PeriodTrackingView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PeriodTrackingView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PeriodTrackingView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PeriodTrackingView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PeriodTrackingView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PeriodTrackingView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PeriodTrackingView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Health/SleepView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SleepView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SleepView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SleepView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SleepView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SleepView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SleepView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SleepView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SleepView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Health/SymptomTrackingView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SymptomTrackingView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SymptomTrackingView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SymptomTrackingView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SymptomTrackingView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SymptomTrackingView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SymptomTrackingView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SymptomTrackingView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SymptomTrackingView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Mind/BreathingExerciseView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExerciseView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExerciseView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExerciseView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExerciseView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExerciseView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExerciseView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExerciseView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExerciseView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Mind/BreathingExitDialog.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExitDialog.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExitDialog.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExitDialog.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExitDialog.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExitDialog.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExitDialog.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExitDialog.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/BreathingExitDialog~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Mind/Components/MindHeroCard.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHeroCard.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHeroCard.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHeroCard.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHeroCard.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHeroCard.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHeroCard.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHeroCard.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHeroCard~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Mind/Components/PracticeRows.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PracticeRows.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PracticeRows.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PracticeRows.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PracticeRows.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PracticeRows.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PracticeRows.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PracticeRows.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PracticeRows~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Mind/KnowledgeBaseView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/KnowledgeBaseView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/KnowledgeBaseView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/KnowledgeBaseView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/KnowledgeBaseView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/KnowledgeBaseView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/KnowledgeBaseView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/KnowledgeBaseView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/KnowledgeBaseView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Mind/MicroBehaviorExperimentView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroBehaviorExperimentView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroBehaviorExperimentView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroBehaviorExperimentView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroBehaviorExperimentView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroBehaviorExperimentView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroBehaviorExperimentView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroBehaviorExperimentView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroBehaviorExperimentView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Mind/MicroEmotionExperimentView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroEmotionExperimentView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroEmotionExperimentView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroEmotionExperimentView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroEmotionExperimentView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroEmotionExperimentView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroEmotionExperimentView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroEmotionExperimentView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MicroEmotionExperimentView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Mind/MindHomeView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHomeView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHomeView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHomeView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHomeView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHomeView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHomeView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHomeView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MindHomeView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Mind/PsychologyCardView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PsychologyCardView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PsychologyCardView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PsychologyCardView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PsychologyCardView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PsychologyCardView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PsychologyCardView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PsychologyCardView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PsychologyCardView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Onboarding/OnboardingFlowView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingFlowView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingFlowView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingFlowView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingFlowView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingFlowView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingFlowView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingFlowView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingFlowView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Onboarding/OnboardingStepData.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepData.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepData.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepData.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepData.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepData.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepData.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepData.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepData~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Onboarding/OnboardingStepView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/OnboardingStepView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/PostOffice/Components/LetterCard.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterCard.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterCard.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterCard.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterCard.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterCard.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterCard.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterCard.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterCard~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/PostOffice/Components/StampCategoryCard.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampCategoryCard.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampCategoryCard.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampCategoryCard.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampCategoryCard.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampCategoryCard.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampCategoryCard.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampCategoryCard.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampCategoryCard~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/PostOffice/LetterSentView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterSentView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterSentView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterSentView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterSentView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterSentView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterSentView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterSentView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/LetterSentView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/PostOffice/MonthlyReportView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MonthlyReportView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MonthlyReportView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MonthlyReportView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MonthlyReportView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MonthlyReportView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MonthlyReportView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MonthlyReportView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MonthlyReportView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/PostOffice/PenPalListView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PenPalListView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PenPalListView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PenPalListView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PenPalListView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PenPalListView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PenPalListView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PenPalListView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PenPalListView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/PostOffice/PostOfficeView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PostOfficeView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PostOfficeView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PostOfficeView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PostOfficeView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PostOfficeView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PostOfficeView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PostOfficeView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/PostOfficeView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/PostOffice/WriteLetterDefaultView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterDefaultView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterDefaultView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterDefaultView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterDefaultView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterDefaultView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterDefaultView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterDefaultView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterDefaultView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/PostOffice/WriteLetterView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Profile/SettingsView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SettingsView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SettingsView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SettingsView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SettingsView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SettingsView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SettingsView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SettingsView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SettingsView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Profile/WeeklySummaryView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WeeklySummaryView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WeeklySummaryView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WeeklySummaryView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WeeklySummaryView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WeeklySummaryView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WeeklySummaryView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WeeklySummaryView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WeeklySummaryView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/StampAlbum/StampAlbumView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampAlbumView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampAlbumView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampAlbumView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampAlbumView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampAlbumView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampAlbumView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampAlbumView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampAlbumView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/StampAlbum/StampData.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampData.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampData.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampData.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampData.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampData.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampData.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampData.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampData~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/StampAlbum/StampObtainedView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampObtainedView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampObtainedView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampObtainedView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampObtainedView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampObtainedView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampObtainedView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampObtainedView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampObtainedView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/StampAlbum/StampShowcaseView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampShowcaseView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampShowcaseView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampShowcaseView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampShowcaseView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampShowcaseView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampShowcaseView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampShowcaseView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/StampShowcaseView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/Components/AppButton.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppButton.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppButton.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppButton.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppButton.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppButton.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppButton.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppButton.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppButton~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/Components/AppCard.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppCard.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppCard.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppCard.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppCard.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppCard.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppCard.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppCard.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppCard~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/Components/AppChip.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppChip.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppChip.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppChip.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppChip.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppChip.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppChip.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppChip.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppChip~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/Components/ResponsiveScreen.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ResponsiveScreen.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ResponsiveScreen.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ResponsiveScreen.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ResponsiveScreen.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ResponsiveScreen.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ResponsiveScreen.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ResponsiveScreen.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ResponsiveScreen~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/Components/ScreenScaffold.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ScreenScaffold.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ScreenScaffold.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ScreenScaffold.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ScreenScaffold.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ScreenScaffold.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ScreenScaffold.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ScreenScaffold.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/ScreenScaffold~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/Components/SectionHeader.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SectionHeader.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SectionHeader.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SectionHeader.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SectionHeader.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SectionHeader.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SectionHeader.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SectionHeader.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/SectionHeader~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/DesignSystem/AppColors.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppColors.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppColors.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppColors.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppColors.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppColors.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppColors.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppColors.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppColors~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/DesignSystem/AppSpacing.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppSpacing.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppSpacing.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppSpacing.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppSpacing.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppSpacing.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppSpacing.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppSpacing.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppSpacing~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/DesignSystem/AppTypography.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppTypography.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppTypography.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppTypography.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppTypography.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppTypography.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppTypography.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppTypography.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AppTypography~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/Extensions/HapticFeedback.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HapticFeedback.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HapticFeedback.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HapticFeedback.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HapticFeedback.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HapticFeedback.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HapticFeedback.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HapticFeedback.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/HapticFeedback~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/Models/MockData.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MockData.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MockData.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MockData.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MockData.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MockData.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MockData.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MockData.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MockData~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/Navigation/DrawerView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DrawerView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DrawerView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DrawerView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DrawerView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DrawerView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DrawerView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DrawerView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/DrawerView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/Navigation/MainContainerView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MainContainerView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MainContainerView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MainContainerView.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MainContainerView.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MainContainerView.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MainContainerView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MainContainerView.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/MainContainerView~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Shared/Services/AudioPlayer.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AudioPlayer.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AudioPlayer.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AudioPlayer.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AudioPlayer.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AudioPlayer.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AudioPlayer.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AudioPlayer.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/AudioPlayer~partial.swiftmodule"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

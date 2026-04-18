@@ -1,0 +1,23 @@
+{
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/PostOffice/WriteLetterDefaultView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterDefaultView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterDefaultView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterDefaultView.dia",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterDefaultView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterDefaultView.swiftdeps"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/PostOffice/WriteLetterView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterView.dia",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WriteLetterView.swiftdeps"
+  },
+  "/Users/seiyazhang/clawd-project/life-midpoint/LifeMidpoint/Features/Profile/WeeklySummaryView.swift" : {
+    "const-values" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WeeklySummaryView.swiftconstvalues",
+    "dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WeeklySummaryView.d",
+    "diagnostics" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WeeklySummaryView.dia",
+    "object" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WeeklySummaryView.o",
+    "swift-dependencies" : "/Users/seiyazhang/clawd-project/life-midpoint/build/Build/Intermediates.noindex/LifeMidpoint.build/Debug-iphonesimulator/LifeMidpoint.build/Objects-normal/arm64/WeeklySummaryView.swiftdeps"
+  }
+}
