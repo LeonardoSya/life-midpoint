@@ -1,40 +1,49 @@
 import SwiftUI
+import SwiftData
 
 // P7.19 服药记录 (2:21827)
 struct MedicationRecordView: View {
-    @State private var medications: [MedicationItem] = MedicationMock.list
+    @Environment(\.modelContext) private var modelContext
+    @State private var todayDoses: [MedicationDoseEvent] = []
+
+    private var repo: HealthRepository { HealthRepository(context: modelContext) }
 
     var body: some View {
         ScreenScaffold(title: "服药记录") {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 12) {
-                    ForEach($medications) { $med in
-                        MedicationRow(med: $med)
+                    ForEach(todayDoses) { dose in
+                        MedicationRow(dose: dose, onToggle: {
+                            Haptic.selection()
+                            repo.toggleDose(dose)
+                        })
                     }
                 }
                 .padding(24)
             }
         }
+        .onAppear {
+            // 每天首次访问时按药品默认提醒时间生成事件; 后续访问直接读取.
+            todayDoses = repo.todayDoseEvents()
+        }
     }
 }
 
 private struct MedicationRow: View {
-    @Binding var med: MedicationItem
+    let dose: MedicationDoseEvent
+    let onToggle: () -> Void
 
     var body: some View {
         HStack(spacing: 12) {
-            Button {
-                Haptic.selection()
-                med.checked.toggle()
-            } label: {
-                Image(systemName: med.checked ? "checkmark.square.fill" : "square")
+            Button(action: onToggle) {
+                Image(systemName: dose.taken ? "checkmark.square.fill" : "square")
                     .font(.system(size: 20))
-                    .foregroundStyle(med.checked ? Color.sleepSecondary : Color.textSecondary)
+                    .foregroundStyle(dose.taken ? Color.sleepSecondary : Color.textSecondary)
             }
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(med.name).bodyStyle(14)
-                Text(med.time).captionStyle(10)
+                Text(dose.medication?.name ?? "未命名").bodyStyle(14)
+                Text(dose.scheduledTime).captionStyle(10)
             }
 
             Spacer()
@@ -125,11 +134,14 @@ struct EditReminderView: View {
 
 // P7.22 我的药品 (2:21921)
 struct MyMedicationsView: View {
+    @Query(sort: \Medication.createdAt, order: .forward)
+    private var medications: [Medication]
+
     var body: some View {
         ScreenScaffold(title: "我的药品", trailingIcon: "plus") {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 12) {
-                    ForEach(MedicationMock.allDrugs, id: \.self) { med in
+                    ForEach(medications) { med in
                         HStack {
                             Image("MedicationIllustration")
                                 .resizable()
@@ -137,7 +149,7 @@ struct MyMedicationsView: View {
                                 .frame(width: 36, height: 36)
                                 .padding(2)
                                 .background(Color.healthPinkLight, in: Circle())
-                            Text(med).bodyStyle(14)
+                            Text(med.name).bodyStyle(14)
                             Spacer()
                             Image(systemName: "chevron.right").font(.system(size: 12))
                                 .foregroundStyle(Color.textSecondary)

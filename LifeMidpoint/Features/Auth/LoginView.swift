@@ -124,7 +124,7 @@ struct LoginView: View {
             }
 
             Text("登入即表示你同意《隐私权政策》与《使用者建议》")
-                .font(.system(size: 10))
+                .font(AppFont.body(10))
                 .foregroundStyle(Color.textSecondary)
         }
     }

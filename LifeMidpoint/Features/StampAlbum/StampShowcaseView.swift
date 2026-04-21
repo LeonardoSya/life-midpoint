@@ -8,9 +8,10 @@ struct StampShowcaseView: View {
         ZStack {
             background
 
+            // 邮票内容垂直居中, 顶/底由 Spacer 平衡, actionLinks 紧贴
+            // description, 不再被 Spacer 推到屏幕底部.
             VStack(spacing: 0) {
-                Spacer()
-                    .frame(height: 80)
+                Spacer(minLength: 0)
 
                 stampImage
                     .padding(.horizontal, 60)
@@ -22,16 +23,17 @@ struct StampShowcaseView: View {
                     .padding(.top, 20)
                     .padding(.horizontal, 32)
 
-                Spacer()
-
                 actionLinks
-                    .padding(.bottom, 40)
+                    .padding(.top, 28)
+
+                Spacer(minLength: 0)
             }
-            .responsiveFill()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
-        .overlay(alignment: .topLeading) {
+        // 顶部按钮通过 safeAreaInset 自动紧贴 status bar 下沿,
+        // 不再硬编码 padding(.top, 60) 导致不同设备视觉漂移.
+        .safeAreaInset(edge: .top, spacing: 0) {
             navigationBar
         }
     }
@@ -65,8 +67,8 @@ struct StampShowcaseView: View {
                     .padding(8)
             }
         }
-        .padding(.horizontal, 24)
-        .padding(.top, 60)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 4)
     }
 
     private var stampImage: some View {

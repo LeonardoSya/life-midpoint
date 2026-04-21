@@ -1,9 +1,22 @@
 import SwiftUI
+import SwiftData
 
 struct SettingsView: View {
+    @Environment(\.modelContext) private var modelContext
     @StateObject private var audio = AudioPlayer.shared
-    @State private var selectedAmbiance = "自动"
-    @State private var selectedNoise = "关闭"
+    @Query private var settingsRows: [AppSettings]
+    @Query private var profiles: [UserProfile]
+    @Query private var diarySessions: [DiarySession]
+    @Query(sort: \Letter.createdAt, order: .reverse)
+    private var allLetters: [Letter]
+    @Query private var allDiaryMessages: [DiaryMessage]
+
+    /// 偏好绑定: 直接读写 SwiftData (跨启动持久化).
+    private var settings: AppSettings {
+        if let s = settingsRows.first { return s }
+        return AppDatabase.settings(in: modelContext)
+    }
+
     @State private var path: NavigationPath = {
         #if DEBUG
         let raw = ProcessInfo.processInfo.environment["DEBUG_PUSH_PROFILE"] ?? ""
@@ -81,15 +94,15 @@ struct SettingsView: View {
                 HStack(spacing: 8) {
                     ForEach(ambiances, id: \.self) { amb in
                         Button {
-                            selectedAmbiance = amb
+                            UserRepository(context: modelContext).updateAmbiance(amb)
                         } label: {
                             Text(amb)
                                 .font(AppFont.body(12))
-                                .foregroundStyle(selectedAmbiance == amb ? .white : Color.textPrimary)
+                                .foregroundStyle(settings.ambianceMode == amb ? .white : Color.textPrimary)
                                 .padding(.horizontal, 14)
                                 .padding(.vertical, 8)
                                 .background(
-                                    selectedAmbiance == amb ? Color.textPrimary : Color.chipBackgroundIdle,
+                                    settings.ambianceMode == amb ? Color.textPrimary : Color.chipBackgroundIdle,
                                     in: Capsule()
                                 )
                         }
@@ -109,7 +122,7 @@ struct SettingsView: View {
                     ForEach(noises, id: \.name) { noise in
                         Button {
                             Haptic.selection()
-                            selectedNoise = noise.name
+                            UserRepository(context: modelContext).updateWhiteNoise(noise.name)
                             if let file = noise.file {
                                 audio.play(file: file, channel: .ambient, loop: true, volume: 0.6)
                             } else {
@@ -122,10 +135,10 @@ struct SettingsView: View {
                                 Text(noise.name)
                                     .font(AppFont.body(10))
                             }
-                            .foregroundStyle(selectedNoise == noise.name ? Color.textPrimary : Color.textSecondary)
+                            .foregroundStyle(settings.whiteNoiseMode == noise.name ? Color.textPrimary : Color.textSecondary)
                             .frame(width: 56, height: 56)
                             .background(
-                                selectedNoise == noise.name ? Color.chipBackgroundSelected : Color.chipBackgroundAlt,
+                                settings.whiteNoiseMode == noise.name ? Color.chipBackgroundSelected : Color.chipBackgroundAlt,
                                 in: RoundedRectangle(cornerRadius: 12)
                             )
                         }
@@ -146,15 +159,18 @@ struct SettingsView: View {
                 .foregroundStyle(Color.textSecondary)
 
             HStack(spacing: 16) {
-                statCard(value: "12", label: "已写日记")
-                statCard(value: "5", label: "寄信")
-                statCard(value: "30", label: "记录天数")
+                statCard(value: "\(diaryEntryCount)", label: "已写日记")
+                statCard(value: "\(sentLetterCount)", label: "寄信")
+                statCard(value: "\(activeDayCount)", label: "记录天数")
             }
 
             NavigationLink(value: SettingsRoute.weeklySummary) {
-                HStack {
-                    Text("我的周报  2.1-2.7")
+                HStack(spacing: 6) {
+                    Text("我的周报")
                         .font(AppFont.body(14))
+                        .foregroundStyle(Color.textPrimary)
+                    Text("2.1-2.7")
+                        .font(AppFont.numeric(12))
                         .foregroundStyle(Color.textPrimary)
                     Spacer()
                     Image(systemName: "chevron.right")
@@ -166,6 +182,31 @@ struct SettingsView: View {
             }
             .buttonStyle(.plain)
         }
+    }
+
+    // MARK: - 派生统计 (从 SwiftData 实时聚合)
+
+    /// "已写日记" = 至少含有一条用户消息的 session 数量.
+    private var diaryEntryCount: Int {
+        diarySessions.filter { s in s.messages.contains(where: { $0.isFromUser }) }.count
+    }
+
+    /// "寄信" = status == sent 的信件数.
+    private var sentLetterCount: Int {
+        allLetters.filter { $0.status == "sent" }.count
+    }
+
+    /// "记录天数" = 用户消息日期 ∪ 寄信日期 的去重天数.
+    private var activeDayCount: Int {
+        let cal = Calendar.current
+        var days: Set<Date> = []
+        for m in allDiaryMessages where m.isFromUser {
+            days.insert(cal.startOfDay(for: m.sentAt))
+        }
+        for l in allLetters where l.status == "sent" {
+            days.insert(cal.startOfDay(for: l.sentAt ?? l.createdAt))
+        }
+        return days.count
     }
 
     private func statCard(value: String, label: String) -> some View {

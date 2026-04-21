@@ -20,24 +20,9 @@ enum PostOfficeMock {
     ]
 }
 
-// MARK: - 笔友
-
-struct PenPal: Identifiable {
-    let id = UUID()
-    let avatar: String
-    let name: String
-    let info: String
-    let time: String
-    let count: Int
-}
-
-enum PenPalMock {
-    static let list: [PenPal] = [
-        PenPal(avatar: "偷", name: "偷喝一口月亮", info: "往来二十三封书信", time: "一天前", count: 23),
-        PenPal(avatar: "云", name: "云端的朋友", info: "往来五封书信", time: "三天前", count: 5),
-        PenPal(avatar: "野", name: "旷野之息", info: "往来九封书信", time: "五天前", count: 9)
-    ]
-}
+// 注意: 旧的 `struct PenPal` mock 已被 SwiftData `@Model class PenPal` 替代,
+// 见 LifeMidpoint/Data/Models/PostOfficeModels.swift. 笔友数据通过
+// `PostOfficeRepository.allPenPals()` 获取.
 
 // MARK: - 健康
 

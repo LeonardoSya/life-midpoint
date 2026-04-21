@@ -192,7 +192,7 @@ struct HealthDashboardView: View {
                         .fill(Color.sleepSecondary.opacity(0.6))
                         .frame(width: 12, height: CGFloat.random(in: 15...35))
                     Text(day)
-                        .font(.system(size: 7))
+                        .font(AppFont.body(7))
                         .foregroundStyle(Color.textSecondary)
                 }
             }

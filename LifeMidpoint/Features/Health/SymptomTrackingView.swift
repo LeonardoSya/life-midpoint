@@ -1,30 +1,29 @@
 import SwiftUI
+import SwiftData
 
 // P7.12 症状跟踪 (2:21512)
 struct SymptomTrackingView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
 
-    struct SymptomEntry: Identifiable {
-        let id = UUID()
-        let name: String
-        let severity: Int // 1-3
-        let icon: String
+    /// 直接订阅"今天"的症状记录, 用户调整严重度时自动持久化.
+    @Query(filter: SymptomTrackingView.todayPredicate(),
+           sort: \SymptomLog.name, order: .forward)
+    private var symptoms: [SymptomLog]
+
+    private var repo: HealthRepository { HealthRepository(context: modelContext) }
+
+    /// 用 startOfDay 作为 SwiftData @Query 谓词, 只显示今天打卡的症状.
+    static func todayPredicate() -> Predicate<SymptomLog> {
+        let today = Calendar.current.startOfDay(for: Date())
+        return #Predicate<SymptomLog> { $0.date == today }
     }
-
-    @State private var symptoms: [SymptomEntry] = [
-        SymptomEntry(name: "潮热", severity: 3, icon: "flame"),
-        SymptomEntry(name: "失眠", severity: 2, icon: "moon.zzz"),
-        SymptomEntry(name: "盗汗", severity: 1, icon: "drop"),
-        SymptomEntry(name: "心悸", severity: 2, icon: "heart"),
-        SymptomEntry(name: "焦虑", severity: 2, icon: "waveform.path"),
-        SymptomEntry(name: "头痛", severity: 0, icon: "brain"),
-    ]
 
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 12) {
-                ForEach($symptoms) { $entry in
-                    symptomCard(entry: $entry)
+                ForEach(symptoms) { entry in
+                    symptomCard(entry: entry)
                 }
             }
             .padding(.horizontal, 24)
@@ -45,15 +44,15 @@ struct SymptomTrackingView: View {
         }
     }
 
-    private func symptomCard(entry: Binding<SymptomEntry>) -> some View {
+    private func symptomCard(entry: SymptomLog) -> some View {
         HStack(spacing: 16) {
-            Image(systemName: entry.wrappedValue.icon)
+            Image(systemName: entry.iconSystemName)
                 .font(.system(size: 18))
                 .foregroundStyle(Color.textSecondary)
                 .frame(width: 40, height: 40)
                 .background(Color.chipBackgroundAlt, in: Circle())
 
-            Text(entry.wrappedValue.name)
+            Text(entry.name)
                 .font(AppFont.body(14))
                 .foregroundStyle(Color.textPrimary)
 
@@ -62,14 +61,11 @@ struct SymptomTrackingView: View {
             HStack(spacing: 4) {
                 ForEach(1...3, id: \.self) { level in
                     Button {
-                        entry.wrappedValue = SymptomTrackingView.SymptomEntry(
-                            name: entry.wrappedValue.name,
-                            severity: level,
-                            icon: entry.wrappedValue.icon
-                        )
+                        Haptic.light()
+                        repo.updateSeverity(entry, severity: level)
                     } label: {
                         Circle()
-                            .fill(level <= entry.wrappedValue.severity ? Color.healthPink : Color.chipBackgroundIdle)
+                            .fill(level <= entry.severity ? Color.healthPink : Color.chipBackgroundIdle)
                             .frame(width: 12, height: 12)
                     }
                 }

@@ -32,7 +32,10 @@ struct RootView: View {
         case .penPalList: NavigationStack { PenPalListView() }
         case .penPalDetail: NavigationStack { PenPalDetailView(name: "偷喝一口月亮") }
         case .stampAlbum: NavigationStack { StampAlbumView() }
-        case .stampShowcase: StampShowcaseView(stamp: StampLibrary.goldStamps[1])
+        case .stampShowcase:
+            // NavigationStack 必须包: StampShowcaseView 用 @Environment(\.dismiss),
+            // 不挂 NavigationStack 的话返回按钮在 preview 模式下无效.
+            NavigationStack { StampShowcaseView(stamp: StampLibrary.goldStamps[1]) }
         case .stampObtained: StampObtainedView(stampImageName: "GoldStamp2")
         case .mind: MindHomeView()
         case .breathing: BreathingExerciseView()

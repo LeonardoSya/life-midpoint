@@ -10,15 +10,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Tgg2abmgK0Tbo9BS3YcYpBBgIPs=
+		x59x8qpStmVGo44N5A8Oy0z10v0=
 		</data>
 		<key>LifeMidpoint.debug.dylib</key>
 		<data>
-		z3Gv9GKJTfo+J0F2zmfJugJ8ss0=
+		M56AneFKvmGLic4HicEWAP3k5vQ=
 		</data>
 		<key>PkgInfo</key>
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
+		</data>
+		<key>SkyHeartClearSerifSC-Regular.ttf</key>
+		<data>
+		0Ra/ig93YZ9A/ZebsE/FqBd5c8U=
+		</data>
+		<key>SourceHanSerifCN-Bold.otf</key>
+		<data>
+		hsm0FSg0hpxCoYG/F/ybeyXDw9o=
+		</data>
+		<key>SourceHanSerifCN-ExtraLight.otf</key>
+		<data>
+		6MwhJhxy0eMgcyGEciS5l7R2Rwc=
 		</data>
 		<key>__preview.dylib</key>
 		<data>
@@ -66,7 +78,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0fRLtJrgEkvv7I1uHhgB9C0FRPiw6ubqOlqRar6X2lQ=
+			E+OpmudPDpcwIA24eWW0g4wuq9AukXe7UDItam2a9TY=
+			</data>
+		</dict>
+		<key>SkyHeartClearSerifSC-Regular.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fyvXvJaQOb1mskW4rZ9WxWc2oyU0LfSBEh9f0yUklDk=
+			</data>
+		</dict>
+		<key>SourceHanSerifCN-Bold.otf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kBGPbCDnmOEuqeW0ds6SDelN4vUF/IP+ZBmJ0y2jimU=
+			</data>
+		</dict>
+		<key>SourceHanSerifCN-ExtraLight.otf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zmmPUeSdvom7hmPtAtpUHOULjK5M1rwxEK1S2WkpbbQ=
 			</data>
 		</dict>
 		<key>__preview.dylib</key>

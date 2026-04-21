@@ -1,7 +1,11 @@
 import SwiftUI
+import SwiftData
 
 struct PostOfficeView: View {
     @State private var showWriteLetter = false
+    /// 直接订阅最近 5 封信件 (用户每寄一封自动出现, 无需手动刷新).
+    @Query(sort: \Letter.createdAt, order: .reverse)
+    private var allLetters: [Letter]
     @State private var path: NavigationPath = {
         #if DEBUG
         let raw = ProcessInfo.processInfo.environment["DEBUG_PUSH_POSTOFFICE"] ?? ""
@@ -56,6 +60,14 @@ struct PostOfficeView: View {
         case monthlyReport
     }
 
+    /// 简洁的人类可读相对时间格式化, 用于卡片"2小时前"显示.
+    private func relativeTime(_ date: Date) -> String {
+        let f = RelativeDateTimeFormatter()
+        f.locale = Locale(identifier: "zh_CN")
+        f.unitsStyle = .short
+        return f.localizedString(for: date, relativeTo: Date())
+    }
+
     private var postOfficeHeader: some View {
         HStack {
             Text("邮局")
@@ -78,11 +90,26 @@ struct PostOfficeView: View {
                 }
             }
 
-            ForEach(PostOfficeMock.recentLetters) { letter in
-                NavigationLink(value: PostOfficeRoute.penPalDetail(name: "未署名")) {
-                    LetterCard(entry: letter)
+            // 优先显示真实历史信件; 用户尚未写过则回落到 demo 演示数据.
+            let recent = Array(allLetters.prefix(5))
+            if recent.isEmpty {
+                ForEach(PostOfficeMock.recentLetters) { letter in
+                    NavigationLink(value: PostOfficeRoute.penPalDetail(name: "未署名")) {
+                        LetterCard(entry: letter)
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
+            } else {
+                ForEach(recent) { letter in
+                    NavigationLink(value: PostOfficeRoute.penPalDetail(name: letter.alias ?? "未署名")) {
+                        LetterCard(entry: LetterEntry(
+                            isFromMe: letter.direction == "sent",
+                            time: relativeTime(letter.sentAt ?? letter.createdAt),
+                            content: letter.body
+                        ))
+                    }
+                    .buttonStyle(.plain)
+                }
             }
         }
         .padding(.top, 20)

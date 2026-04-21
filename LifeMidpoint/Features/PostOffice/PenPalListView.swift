@@ -1,14 +1,11 @@
 import SwiftUI
+import SwiftData
 
 // P4.22 我的笔友 (2:23857)
 struct PenPalListView: View {
     @Environment(\.dismiss) private var dismiss
-
-    private let penPals = [
-        ("偷喝一口月亮", "往来二十三封书信", "一天前"),
-        ("云端的朋友", "往来五封书信", "三天前"),
-        ("旷野之息", "往来九封书信", "五天前")
-    ]
+    @Query(sort: \PenPal.lastActiveAt, order: .reverse)
+    private var penPals: [PenPal]
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -17,8 +14,8 @@ struct PenPalListView: View {
 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
-                        ForEach(penPals, id: \.0) { pal in
-                            penPalCard(name: pal.0, info: pal.1, time: pal.2)
+                        ForEach(penPals) { pal in
+                            penPalCard(name: pal.name, info: pal.info, time: relativeTime(pal.lastActiveAt))
                         }
                     }
                     .padding(.horizontal, 4)
@@ -55,6 +52,13 @@ struct PenPalListView: View {
                 .font(AppFont.caption(12))
                 .foregroundStyle(Color.textSecondary)
         }
+    }
+
+    private func relativeTime(_ date: Date) -> String {
+        let f = RelativeDateTimeFormatter()
+        f.locale = Locale(identifier: "zh_CN")
+        f.unitsStyle = .short
+        return f.localizedString(for: date, relativeTo: Date())
     }
 
     private func penPalCard(name: String, info: String, time: String) -> some View {

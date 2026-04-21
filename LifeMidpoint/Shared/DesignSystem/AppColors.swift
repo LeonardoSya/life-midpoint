@@ -112,9 +112,14 @@ extension Color {
     // MARK: - 情绪记录提示
     static let emotionPink = Color(hex: 0xC590B3)
 
+    // MARK: - Onboarding 对话气泡 (严格对应 Figma 设计稿)
+    static let bubbleBackground = Color(hex: 0xFFFEFB)      // 气泡奶白底
+    static let bubbleText = Color(hex: 0x5C605F)            // 气泡正文 (深灰绿)
+    static let bubbleAccent = Color(hex: 0xFE8785)          // 旁白/* 开头特殊色 (粉红)
+
     // MARK: - 杂项辅助色 (Misc)
     static let mutedGray = Color(hex: 0x8B8B8B)             // 通用灰
-    static let dialogueGray = Color(hex: 0x666666)          // 对话气泡文字
+    static let dialogueGray = Color(hex: 0x666666)          // 对话气泡文字 (旧, onboarding 已迁移到 bubbleText)
     static let dustyPurple = Color(hex: 0x76697A)           // 输入占位
     static let mauve = Color(hex: 0x776B77)                 // 紫灰链接
     static let pastelLightBlue = Color(hex: 0xE8F4F8)       // 浅蓝按钮

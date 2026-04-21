@@ -21,6 +21,7 @@ enum AppModule: String, CaseIterable {
 
 struct MainContainerView: View {
     @State private var selectedModule: AppModule
+    @StateObject private var audio = AudioPlayer.shared
 
     init() {
         #if DEBUG
@@ -37,6 +38,11 @@ struct MainContainerView: View {
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 BottomTabBar(selectedModule: $selectedModule)
             }
+            .onAppear { syncAmbient(for: selectedModule) }
+            .onChange(of: selectedModule) { _, new in
+                syncAmbient(for: new)
+            }
+            .onDisappear { audio.stop(channel: .ambient) }
     }
 
     @ViewBuilder
@@ -47,6 +53,24 @@ struct MainContainerView: View {
         case .mind:       MindHomeView()
         case .postOffice: PostOfficeView()
         case .profile:    SettingsView()
+        }
+    }
+
+    /// 基于当前 tab 同步 ambient 白噪音.
+    /// - 日记页: 海浪 (符合设计稿"海边咖啡厅"意象, 轻柔陪伴记录)
+    /// - 其他 tab: 停止 ambient, 避免干扰
+    /// Diary tab 内部 push 子页 (回顾日记/情绪详情等) 不会触发 selectedModule 变化,
+    /// 所以海浪会持续播放, 不会在跳转瞬间断掉.
+    private func syncAmbient(for module: AppModule) {
+        switch module {
+        case .diary:
+            guard audio.currentAmbient != AudioAssets.whiteNoiseWaves else { return }
+            audio.play(file: AudioAssets.whiteNoiseWaves,
+                       channel: .ambient,
+                       loop: true,
+                       volume: 0.35)
+        default:
+            audio.stop(channel: .ambient)
         }
     }
 }

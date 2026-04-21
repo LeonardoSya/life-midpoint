@@ -44,7 +44,7 @@ struct DiarySummaryView: View {
                 .lineSpacing(5)
 
             Text("*内容由Ai自动整合生成，点击可自由修改。")
-                .font(.system(size: 10))
+                .font(AppFont.body(10))
                 .foregroundStyle(Color.emotionPink)
                 .padding(.top, 16)
         }

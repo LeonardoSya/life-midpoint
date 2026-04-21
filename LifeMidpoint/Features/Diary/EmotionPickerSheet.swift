@@ -118,7 +118,7 @@ struct EmotionPickerSheet: View {
             HStack {
                 ForEach(intensityLabels, id: \.self) { label in
                     Text(label)
-                        .font(.system(size: 10))
+                        .font(AppFont.body(10))
                         .foregroundStyle(Color.textSecondary)
                         .frame(maxWidth: .infinity)
                 }

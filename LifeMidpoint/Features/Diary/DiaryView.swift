@@ -1,9 +1,18 @@
 import SwiftUI
+import SwiftData
 
 struct DiaryView: View {
+    @Environment(\.modelContext) private var modelContext
     @State private var inputText = ""
-    @State private var messages: [ChatMessage] = []
+    @State private var session: DiarySession?
     @State private var diaryState: DiaryState = .idle
+
+    private var repo: DiaryRepository { DiaryRepository(context: modelContext) }
+
+    /// 当前 session 的消息按时间排序. SwiftData 的 @Model 关系变化会触发 view 重绘.
+    private var messages: [DiaryMessage] {
+        (session?.messages ?? []).sorted { $0.sentAt < $1.sentAt }
+    }
 
     var body: some View {
         NavigationStack {
@@ -82,7 +91,7 @@ struct DiaryView: View {
         }
     }
 
-    private func chatBubble(_ message: ChatMessage) -> some View {
+    private func chatBubble(_ message: DiaryMessage) -> some View {
         HStack {
             if message.isFromUser { Spacer(minLength: 60) }
 
@@ -154,16 +163,19 @@ struct DiaryView: View {
 
     // MARK: - Logic
 
+    /// 取持久化的最近 session, 没有则新建; 空 session 自动播种 AI 引导对话.
     private func loadInitialDialogue() {
-        messages = [
-            ChatMessage(text: "你这几天看着有点累。\n晚上是不是没怎么睡踏实？", isFromUser: false),
-            ChatMessage(text: "我感觉你一安静下来，\n就会有好多想法会冒出来，这是什么样的感觉呢！", isFromUser: false)
-        ]
+        let s = repo.currentOrNewSession()
+        session = s
+        if s.messages.isEmpty {
+            repo.append(text: "你这几天看着有点累。\n晚上是不是没怎么睡踏实？", isFromUser: false, to: s)
+            repo.append(text: "我感觉你一安静下来，\n就会有好多想法会冒出来，这是什么样的感觉呢！", isFromUser: false, to: s)
+        }
     }
 
     private func sendMessage() {
-        guard !inputText.isEmpty else { return }
-        messages.append(ChatMessage(text: inputText, isFromUser: true))
+        guard !inputText.isEmpty, let session else { return }
+        repo.append(text: inputText, isFromUser: true, to: session)
         inputText = ""
     }
 }

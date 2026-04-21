@@ -2,12 +2,15 @@ import SwiftUI
 
 /// 心境 - 疗愈跟练 + 微情绪实验 双 ROW 区
 struct PracticeAndExperimentSection: View {
+    // 卡片宽度自适应字体宽度, 避免标题被截断 ("疗愈跟练" / "微情绪实验" 4-5 字)
+    private static let moduleCardWidth: CGFloat = 130
+
     var body: some View {
         VStack(spacing: 19) {
             HStack(spacing: 11) {
                 NavigationLink(value: MindHomeView.MindRoute.breathing) {
                     ModuleCard(title: "疗愈跟练", icon: "waveform.path")
-                        .frame(width: 113)
+                        .frame(width: Self.moduleCardWidth)
                 }
                 .buttonStyle(.plain)
 
@@ -20,7 +23,7 @@ struct PracticeAndExperimentSection: View {
             HStack(spacing: 11) {
                 NavigationLink(value: MindHomeView.MindRoute.microEmotion) {
                     ModuleCard(title: "微情绪实验", icon: "arrow.triangle.2.circlepath")
-                        .frame(width: 109)
+                        .frame(width: Self.moduleCardWidth)
                 }
                 .buttonStyle(.plain)
 
@@ -48,7 +51,11 @@ private struct ModuleCard: View {
                         .foregroundStyle(Color.mindPrimary)
                 )
 
-            Text(title).titleStyle(16)
+            Text(title)
+                .titleStyle(15)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(25)
         .frame(height: 162, alignment: .topLeading)

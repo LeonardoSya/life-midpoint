@@ -3,7 +3,15 @@ import SwiftUI
 struct OnboardingFlowView: View {
     @EnvironmentObject private var appState: AppStateManager
     @StateObject private var audio = AudioPlayer.shared
-    @State private var currentStep = 0
+    @State private var currentStep: Int = {
+        #if DEBUG
+        if let raw = ProcessInfo.processInfo.environment["DEBUG_ONBOARDING_STEP"],
+           let i = Int(raw), (0..<onboardingSteps.count).contains(i) {
+            return i
+        }
+        #endif
+        return 0
+    }()
     @State private var musicStarted = false
 
     var body: some View {
@@ -33,11 +41,32 @@ struct OnboardingFlowView: View {
         }
         .onAppear {
             playAudioForStep(currentStep)
+            #if DEBUG
+            scheduleAutoAdvanceIfNeeded()
+            #endif
         }
         .onDisappear {
             audio.stopAll()
         }
     }
+
+    #if DEBUG
+    /// 通过 SIMCTL_CHILD_DEBUG_AUTO_ADVANCE=<seconds> 启动后, 每 N 秒自动 advanceStep 一次,
+    /// 用于自动化验证 14 步流转无死锁 / 卡死. 只 schedule 一次, 然后递归 schedule.
+    private func scheduleAutoAdvanceIfNeeded() {
+        guard let raw = ProcessInfo.processInfo.environment["DEBUG_AUTO_ADVANCE"],
+              let interval = Double(raw), interval > 0 else { return }
+        DispatchQueue.main.asyncAfter(deadline: .now() + interval) {
+            // CTA step (14): 直接调 onComplete (跳过 SlideToConfirmButton 拖拽)
+            if onboardingSteps[currentStep].ctaText != nil {
+                completeOnboarding()
+            } else {
+                advanceStep()
+                scheduleAutoAdvanceIfNeeded()   // 递归继续自动推进
+            }
+        }
+    }
+    #endif
 
     private var progressIndicator: some View {
         HStack(spacing: 6) {
