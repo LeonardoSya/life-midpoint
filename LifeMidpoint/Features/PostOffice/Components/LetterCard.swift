@@ -40,10 +40,6 @@ struct LetterCard: View {
             .frame(width: 274, alignment: .leading)
             .background(direction.bgColor)
             .clipShape(LetterShape(direction: direction))
-            .overlay(
-                LetterBorderShape(direction: direction)
-                    .stroke(direction.accentColor.opacity(0.2), lineWidth: 4)
-            )
             .shadow(color: .black.opacity(0.05), radius: 1, y: 1)
 
             if direction == .received { Spacer() }
@@ -69,18 +65,3 @@ struct LetterShape: Shape {
     }
 }
 
-struct LetterBorderShape: Shape {
-    let direction: LetterDirection
-
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        if direction == .sent {
-            path.move(to: CGPoint(x: 0, y: 0))
-            path.addLine(to: CGPoint(x: 0, y: rect.height))
-        } else {
-            path.move(to: CGPoint(x: rect.width, y: 0))
-            path.addLine(to: CGPoint(x: rect.width, y: rect.height))
-        }
-        return path
-    }
-}

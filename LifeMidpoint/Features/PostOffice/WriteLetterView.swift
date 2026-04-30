@@ -4,7 +4,6 @@ import SwiftData
 struct WriteLetterView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    @FocusState private var bodyFocused: Bool
     @State private var letterContent = ""
     @State private var alias: String = ""
     @State private var selectedMood: String?
@@ -12,16 +11,20 @@ struct WriteLetterView: View {
     @State private var selectedWeather: String?
     @State private var selectedLetterType: String?
     @State private var recipientMode: String = "stranger"   // "stranger" / "self"
+    @State private var showFullWriter = false
+    @State private var showSentConfirmation = false
+    @State private var path = NavigationPath()
+    @State private var selectedStamp: StampInfo = StampLibrary.goldStamps[1]
 
     private var repo: PostOfficeRepository { PostOfficeRepository(context: modelContext) }
 
-    private let moods = ["忙里偷闲", "旅行途中", "\u{201C}虚\u{201D}"]
-    private let feelings = ["心情平静", "有些疲惫", "知足"]
-    private let weathers = ["阳光灿烂", "阴雨绵绵", "晚风"]
-    private let letterTypes = ["碎碎念", "心事清单", "今天的"]
+    private let moods = ["自由填写 →", "忙里偷闲", "旅行途中", "“虚度”光阴", "等待某人", "深夜独处"]
+    private let feelings = ["自由填写 →", "心情平静", "有些疲惫", "知足常乐", "莫名惆怅", "充满期待"]
+    private let weathers = ["自由填写 →", "阳光灿烂", "阴雨绵绵", "晚风微凉", "闷热难耐", "云朵很美"]
+    private let letterTypes = ["自由填写 →", "碎碎念", "心事清单", "今天的见闻", "远方的问候", "小小的秘密"]
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 0) {
                     envelopePreview
@@ -57,6 +60,38 @@ struct WriteLetterView: View {
                     }
                 }
             }
+            .fullScreenCover(isPresented: $showFullWriter) {
+                WriteLetterDefaultView(letterText: $letterContent)
+            }
+            .fullScreenCover(isPresented: $showSentConfirmation) {
+                LetterSentView(stampImageName: selectedStamp.imageName) {
+                    dismiss()
+                }
+            }
+            .navigationDestination(for: WriteLetterRoute.self) { route in
+                switch route {
+                case .stampSelection:
+                    StampSelectionView(selectedStamp: selectedStamp) { stamp in
+                        selectedStamp = stamp
+                        path.append(WriteLetterRoute.preview(stamp.id))
+                    }
+                case .preview:
+                    LetterPreviewView(
+                        content: letterContent,
+                        alias: alias.isEmpty ? "屋檐与猫" : alias,
+                        recipientMode: recipientMode,
+                        mood: selectedMood,
+                        feeling: selectedFeeling,
+                        weather: selectedWeather,
+                        letterType: selectedLetterType,
+                        stamp: selectedStamp
+                    ) {
+                        sendLetter()
+                    } onEdit: {
+                        path.removeLast(path.count)
+                    }
+                }
+            }
         }
     }
 
@@ -73,37 +108,41 @@ struct WriteLetterView: View {
                     .foregroundStyle(Color.textSecondary)
             }
 
-            ZStack(alignment: .topLeading) {
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(Color.paperWarm)
-                    .frame(minHeight: 180)
+            Button {
+                Haptic.light()
+                showFullWriter = true
+            } label: {
+                ZStack(alignment: .topLeading) {
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.paperWarm)
+                        .frame(minHeight: 180)
 
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(recipientMode == "stranger" ? "寄给 陌生的人..." : "写给 自己...")
-                        .font(AppFont.body(14))
-                        .foregroundStyle(Color.textSecondary)
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text(recipientMode == "stranger" ? "寄给 陌生的人..." : "写给 自己...")
+                            .font(AppFont.body(14))
+                            .foregroundStyle(Color.textSecondary)
 
-                    TextEditor(text: $letterContent)
-                        .font(AppFont.body(13))
-                        .foregroundStyle(Color.textPrimary)
-                        .scrollContentBackground(.hidden)
-                        .background(Color.clear)
-                        .frame(minHeight: 110)
-                        .focused($bodyFocused)
-                        .overlay(alignment: .topLeading) {
-                            if letterContent.isEmpty {
-                                Text("写下今天想说的话...")
-                                    .font(AppFont.body(13))
-                                    .foregroundStyle(Color.textSecondary.opacity(0.55))
-                                    .padding(.top, 8)
-                                    .padding(.leading, 4)
-                                    .allowsHitTesting(false)
-                            }
-                        }
+                        Text(letterPreviewText)
+                            .font(AppFont.body(13))
+                            .foregroundStyle(
+                                letterContent.isEmpty
+                                ? Color.textSecondary.opacity(0.55)
+                                : Color.textPrimary.opacity(0.78)
+                            )
+                            .lineSpacing(6)
+                            .frame(maxWidth: .infinity, minHeight: 92, alignment: .topLeading)
+                    }
+                    .padding(20)
                 }
-                .padding(20)
             }
+            .buttonStyle(.plain)
         }
+    }
+
+    private var letterPreviewText: String {
+        let trimmed = letterContent.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return "点击信封，进入全屏书写..." }
+        return trimmed.count > 80 ? String(trimmed.prefix(80)) + "..." : trimmed
     }
 
     // MARK: - Alias
@@ -114,12 +153,14 @@ struct WriteLetterView: View {
                 .font(AppFont.body(14))
                 .foregroundStyle(Color.textPrimary)
 
-            TextField("自由填写", text: $alias)
-                .font(AppFont.body(13))
-                .padding(.horizontal, 16)
-                .padding(.vertical, 10)
+            TextField("自由填写  →", text: $alias)
+                .font(AppFont.body(16))
+                .foregroundStyle(Color(hex: 0x57534E))
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 20)
+                .frame(height: 48)
                 .overlay(
-                    Capsule().stroke(Color.borderLight, lineWidth: 1)
+                    Capsule().stroke(Color(hex: 0xD6D3D1), lineWidth: 1)
                 )
         }
     }
@@ -151,15 +192,15 @@ struct WriteLetterView: View {
             action()
         } label: {
             Text(text)
-                .font(AppFont.body(13))
-                .foregroundStyle(isSelected ? .white : Color.textSecondary)
-                .padding(.horizontal, 16)
-                .padding(.vertical, 10)
+                .font(AppFont.body(16))
+                .foregroundStyle(isSelected ? Color(hex: 0x9BB167) : Color(hex: 0x57534E))
+                .padding(.horizontal, 20)
+                .frame(height: 48)
                 .background(
-                    Capsule().fill(isSelected ? Color.inkBrownDeep : Color.clear)
+                    Capsule().fill(isSelected ? Color(hex: 0xF5F7EE) : Color.clear)
                 )
                 .overlay(
-                    Capsule().stroke(Color.borderLight, lineWidth: isSelected ? 0 : 1)
+                    Capsule().stroke(isSelected ? Color(hex: 0x9BB167) : Color(hex: 0xD6D3D1), lineWidth: 1)
                 )
         }
     }
@@ -173,31 +214,36 @@ struct WriteLetterView: View {
     private var completeButton: some View {
         Button {
             guard canSend else { return }
-            // 持久化信件 (status=sent), 同时奖励一枚邮票.
-            // 邮票 id 简化用首条 gold 邮票, 真实业务可基于事件解锁不同邮票.
-            repo.send(
-                body: letterContent,
-                recipientMode: recipientMode,
-                moodTag: selectedMood,
-                feelingTag: selectedFeeling,
-                weatherTag: selectedWeather,
-                letterTypeTag: selectedLetterType,
-                alias: alias.isEmpty ? nil : alias,
-                awardStampDefinitionId: "gold_1"
-            )
             Haptic.medium()
-            dismiss()
+            path.append(WriteLetterRoute.stampSelection)
         } label: {
             Text("完成撰写")
                 .font(AppFont.title(16))
                 .foregroundStyle(.white)
                 .frame(maxWidth: .infinity)
                 .frame(height: 50)
-                .background(
-                    canSend ? Color.inkBrownDeep : Color.inkBrownDeep.opacity(0.4),
-                    in: RoundedRectangle(cornerRadius: 25)
-                )
+                .background(canSend ? Color(hex: 0x926247) : Color(hex: 0x926247).opacity(0.4), in: Capsule())
         }
         .disabled(!canSend)
     }
+
+    private func sendLetter() {
+        repo.send(
+            body: letterContent,
+            recipientMode: recipientMode,
+            moodTag: selectedMood,
+            feelingTag: selectedFeeling,
+            weatherTag: selectedWeather,
+            letterTypeTag: selectedLetterType,
+            alias: alias.isEmpty ? nil : alias,
+            awardStampDefinitionId: selectedStamp.id
+        )
+        Haptic.success()
+        showSentConfirmation = true
+    }
+}
+
+private enum WriteLetterRoute: Hashable {
+    case stampSelection
+    case preview(String)
 }

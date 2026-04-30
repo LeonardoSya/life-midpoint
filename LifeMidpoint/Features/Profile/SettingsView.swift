@@ -2,6 +2,9 @@ import SwiftUI
 import SwiftData
 
 struct SettingsView: View {
+    var onBackToDiary: (() -> Void)? = nil
+    var useOwnNavigationStack = true
+
     @Environment(\.modelContext) private var modelContext
     @StateObject private var audio = AudioPlayer.shared
     @Query private var settingsRows: [AppSettings]
@@ -41,30 +44,49 @@ struct SettingsView: View {
     ]
 
     var body: some View {
-        NavigationStack(path: $path) {
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 24) {
-                    emotionSection
-                    personalSection
-                    systemSection
-                }
-                .padding(.horizontal, 24)
-                .padding(.top, 16)
-                .padding(.bottom, 40)
+        if useOwnNavigationStack {
+            NavigationStack(path: $path) {
+                content
+                    .navigationDestination(for: SettingsRoute.self) { route in
+                        settingsDestination(route)
+                    }
             }
-            .background(Color.pageBackground.ignoresSafeArea())
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("我的")
-                        .font(AppFont.title(18))
+        } else {
+            content
+        }
+    }
+
+    private var content: some View {
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 24) {
+                if let onBackToDiary {
+                    HStack {
+                        ModuleHomeBackButton(action: onBackToDiary)
+                        Spacer()
+                    }
                 }
+                emotionSection
+                personalSection
+                systemSection
             }
-            .navigationDestination(for: SettingsRoute.self) { route in
-                switch route {
-                case .weeklySummary: WeeklySummaryView(variant: 0)
-                case .stampAlbum: StampAlbumView()
-                }
+            .padding(.horizontal, 24)
+            .padding(.top, 16)
+            .padding(.bottom, 40)
+        }
+        .background(Color.pageBackground.ignoresSafeArea())
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("我的")
+                    .font(AppFont.title(18))
             }
+        }
+    }
+
+    @ViewBuilder
+    func settingsDestination(_ route: SettingsRoute) -> some View {
+        switch route {
+        case .weeklySummary: WeeklySummaryView(variant: 0)
+        case .stampAlbum: StampAlbumView()
         }
     }
 

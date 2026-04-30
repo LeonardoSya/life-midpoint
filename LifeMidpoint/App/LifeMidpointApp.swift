@@ -6,6 +6,7 @@ struct LifeMidpointApp: App {
     @StateObject private var appState = AppStateManager()
 
     init() {
+        resetEphemeralDiaryHistory()
         runDebugDataHooks()
     }
 
@@ -23,8 +24,15 @@ struct LifeMidpointApp: App {
     /// 通过环境变量触发, 无需手动 UI 操作:
     ///   - DEBUG_INSERT_SYMPTOM=<name>  插入一条带名症状 (icon=checkmark.seal, severity=2)
     ///   - DEBUG_INSERT_LETTER=<text>   寄出一封 marker 信件
+    ///   - DEBUG_INSERT_DIARY_ENTRY=1   插入一条 marker 日记总结
     ///   - DEBUG_SET_NOISE=<mode>       覆盖 AppSettings.whiteNoiseMode
     ///   - DEBUG_PRINT_DB=1             打印各表当前条目数, 便于跨重启对比
+    @MainActor
+    private func resetEphemeralDiaryHistory() {
+        let ctx = AppDatabase.shared.mainContext
+        DiaryRepository(context: ctx).deleteAllConversationHistory()
+    }
+
     @MainActor
     private func runDebugDataHooks() {
         #if DEBUG
@@ -44,6 +52,15 @@ struct LifeMidpointApp: App {
                 awardStampDefinitionId: "gold_1"
             )
             print("🧪 DEBUG: inserted Letter body=\(body)")
+        }
+
+        if env["DEBUG_INSERT_DIARY_ENTRY"] != nil {
+            DiaryRepository(context: ctx).createEntry(
+                title: "疲惫但平静的晴天",
+                body: "下午在公园散步，让我的思绪慢慢沉下来。我开始留意生活中那些安静的细节，比如树叶轻轻晃动的样子。只是偶尔还是会有一种被困住的感觉，也隐隐察觉到自己的体力不如从前了。",
+                summaryText: "4月29日 疲惫但平静的晴天\n\n下午在公园散步，让我的思绪慢慢沉下来。我开始留意生活中那些安静的细节，比如树叶轻轻晃动的样子。"
+            )
+            print("🧪 DEBUG: inserted DiaryEntry")
         }
 
         if let noise = env["DEBUG_SET_NOISE"], !noise.isEmpty {
@@ -67,6 +84,7 @@ struct LifeMidpointApp: App {
         print("  UserProfile:        \(count(UserProfile.self))")
         print("  AppSettings:        \(count(AppSettings.self))")
         print("  DiarySession:       \(count(DiarySession.self))")
+        print("  DiaryEntry:         \(count(DiaryEntry.self))")
         print("  DiaryMessage:       \(count(DiaryMessage.self))")
         print("  EmotionLog:         \(count(EmotionLog.self))")
         print("  SymptomLog:         \(count(SymptomLog.self))")

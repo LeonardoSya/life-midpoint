@@ -1,165 +1,298 @@
 import SwiftUI
-import SwiftData
 
-// P7.19 服药记录 (2:21827)
+// MARK: - 服药记录 (2:21827)
+
 struct MedicationRecordView: View {
-    @Environment(\.modelContext) private var modelContext
-    @State private var todayDoses: [MedicationDoseEvent] = []
-
-    private var repo: HealthRepository { HealthRepository(context: modelContext) }
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        ScreenScaffold(title: "服药记录") {
-            ScrollView(showsIndicators: false) {
-                VStack(spacing: 12) {
-                    ForEach(todayDoses) { dose in
-                        MedicationRow(dose: dose, onToggle: {
-                            Haptic.selection()
-                            repo.toggleDose(dose)
-                        })
-                    }
-                }
-                .padding(24)
+        MedicationShell(
+            title: "服药提醒",
+            trailing: "plus",
+            trailingRoute: .myMedications,
+            onBack: { dismiss() }
+        ) {
+            VStack(spacing: 22) {
+                weekCard
+                recordTimeline
             }
-        }
-        .onAppear {
-            // 每天首次访问时按药品默认提醒时间生成事件; 后续访问直接读取.
-            todayDoses = repo.todayDoseEvents()
+            .padding(.horizontal, 26)
+            .padding(.top, 92)
+            .padding(.bottom, 40)
         }
     }
-}
 
-private struct MedicationRow: View {
-    let dose: MedicationDoseEvent
-    let onToggle: () -> Void
-
-    var body: some View {
-        HStack(spacing: 12) {
-            Button(action: onToggle) {
-                Image(systemName: dose.taken ? "checkmark.square.fill" : "square")
-                    .font(.system(size: 20))
-                    .foregroundStyle(dose.taken ? Color.sleepSecondary : Color.textSecondary)
+    private var weekCard: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            HStack {
+                Text("本周").font(AppFont.title(22))
+                Text("（2.1 - 2.7）").font(AppFont.body(13))
+                Spacer()
+                Image(systemName: "chevron.left")
+                Image(systemName: "chevron.right").foregroundStyle(Color(hex: 0x7BC5E2))
             }
-
-            VStack(alignment: .leading, spacing: 2) {
-                Text(dose.medication?.name ?? "未命名").bodyStyle(14)
-                Text(dose.scheduledTime).captionStyle(10)
+            HStack(spacing: 4) {
+                ForEach(0..<7, id: \.self) { index in
+                    VStack(spacing: 8) {
+                        Text(["日", "一", "二", "三", "四", "五", "六"][index]).font(AppFont.body(15))
+                        Text(String(format: "%02d", index + 1))
+                            .font(AppFont.body(15))
+                            .frame(width: 38, height: 38)
+                            .background(Color(hex: 0x7BC5E2, alpha: index == 2 ? 0.28 : 0.18), in: Circle())
+                    }
+                    .frame(maxWidth: .infinity)
+                    .background(index == 2 ? Color(hex: 0x7BC5E2, alpha: 0.12) : .clear, in: RoundedRectangle(cornerRadius: 20))
+                }
             }
-
-            Spacer()
-
-            Image("MedicationIllustration")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 32, height: 32)
         }
         .padding(16)
-        .background(.white, in: RoundedRectangle(cornerRadius: 16))
+        .background(Color.white, in: RoundedRectangle(cornerRadius: 24))
+        .shadow(color: .black.opacity(0.08), radius: 4, y: 4)
     }
-}
 
-// P7.20 服药提醒详情 (2:22082)
-struct MedicationReminderView: View {
-    var body: some View {
-        ScreenScaffold(title: nil) {
-            ScrollView(showsIndicators: false) {
-                VStack(spacing: 16) {
-                    HStack {
-                        Text("大豆异黄酮").titleStyle(20)
-                        Spacer()
-                    }
-
-                    DetailRow(label: "时间", value: "09:00")
-                    DetailRow(label: "频率", value: "每日")
-                    DetailRow(label: "剂量", value: "1 粒")
-                    DetailRow(label: "备注", value: "空腹服用")
-
-                    Button { Haptic.medium() } label: {
-                        Text("修改提醒")
-                            .font(AppFont.body(14)).foregroundStyle(.white)
-                            .frame(maxWidth: .infinity).padding(.vertical, 14)
-                            .background(Color.sleepSecondary, in: RoundedRectangle(cornerRadius: 24))
-                    }
+    private var recordTimeline: some View {
+        HStack(alignment: .top, spacing: 18) {
+            VStack(alignment: .leading, spacing: 41) {
+                Text("时间").font(AppFont.title(17))
+                ForEach(["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"], id: \.self) {
+                    Text($0).font(AppFont.title(15)).foregroundStyle(Color.deepCharcoal.opacity(0.34))
                 }
-                .padding(24)
+            }
+
+            Rectangle()
+                .fill(Color.black.opacity(0.14))
+                .frame(width: 1, height: 536)
+                .padding(.top, 55)
+
+            VStack(alignment: .leading, spacing: 13) {
+                HStack {
+                    Text("服药记录").font(AppFont.title(17))
+                    Spacer()
+                    NavigationLink(value: HealthDashboardView.HealthRoute.myMedications) {
+                        Text("我的药品")
+                            .font(AppFont.body(13))
+                            .foregroundStyle(Color(hex: 0x1D637E))
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 5)
+                            .background(Color(hex: 0x7BC5E2, alpha: 0.3), in: RoundedRectangle(cornerRadius: 5))
+                    }
+                    .buttonStyle(.plain)
+                }
+                medicationLink("大豆异黄酮", desc: "口服胶囊，每日 1–2 次，1次一粒，随餐或饭后服用。", image: "MedicationIllustration", done: true)
+                medicationLink("雌激素制剂片", desc: "片剂，每日 1 次，1次一粒，随餐或餐后服用。", image: "MedicationIllustration", done: true)
+                medicationLink("鱼油", desc: "随餐服用，每日 1 次，1次一粒。", image: "MedicationIllustration", done: false)
+                medicationLink("褪黑素", desc: "1次一粒，睡前 30–60 分钟服用。", image: "MedicationIllustration", done: false)
             }
         }
     }
-}
 
-private struct DetailRow: View {
-    let label: String
-    let value: String
-
-    var body: some View {
-        HStack {
-            Text(label).bodyStyle(13).foregroundStyle(Color.textSecondary)
-            Spacer()
-            Text(value).bodyStyle(13)
+    private func medicationLink(_ name: String, desc: String, image: String, done: Bool) -> some View {
+        NavigationLink(value: HealthDashboardView.HealthRoute.reminder) {
+            medicationCard(name, desc: desc, image: image, done: done)
         }
-        .padding(.horizontal, 16).padding(.vertical, 12)
-        .background(.white, in: RoundedRectangle(cornerRadius: 12))
+        .buttonStyle(.plain)
+    }
+
+    private func medicationCard(_ name: String, desc: String, image: String, done: Bool) -> some View {
+        HStack(spacing: 12) {
+            Image(image).resizable().scaledToFit().frame(width: 64, height: 64).padding(8).background(Color(hex: 0x7BC5E2, alpha: 0.15), in: RoundedRectangle(cornerRadius: 10))
+            VStack(alignment: .leading, spacing: 8) {
+                Text(name).font(AppFont.title(15))
+                Text(desc).font(AppFont.body(13)).foregroundStyle(Color.black.opacity(0.7)).lineLimit(2)
+            }
+            Spacer()
+            Image(systemName: done ? "checkmark" : "square")
+                .foregroundStyle(done ? Color(hex: 0x1D637E) : Color.black.opacity(0.35))
+                .frame(width: 33, height: 33)
+                .background(done ? Color(hex: 0x7BC5E2, alpha: 0.46) : Color.white.opacity(0.7), in: RoundedRectangle(cornerRadius: 10))
+                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black.opacity(done ? 0 : 0.35), style: StrokeStyle(lineWidth: 1, dash: done ? [] : [3, 3])))
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, minHeight: 114)
+        .background(Color.white, in: RoundedRectangle(cornerRadius: 20))
     }
 }
 
-// P7.21 修改提醒 (2:21985)
+// MARK: - 服药提醒详情 (2:22082)
+
+struct MedicationReminderView: View {
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        MedicationShell(title: "服药提醒", trailing: "ellipsis", onBack: { dismiss() }) {
+            VStack(alignment: .leading, spacing: 22) {
+                HStack(alignment: .top, spacing: 28) {
+                    Image("MedicationIllustration")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 147, height: 184)
+                        .background(Color(hex: 0x7BC5E2, alpha: 0.15), in: RoundedRectangle(cornerRadius: 10))
+                    VStack(alignment: .leading, spacing: 18) {
+                        detailBlock("药品名称", "雌激素制剂片")
+                        detailBlock("含量", "0.5 mg / 片")
+                        detailBlock("类型", "更年期相关药物")
+                    }
+                }
+                Group {
+                    detailBlock("剂量", "1次一粒(1–2 mg)")
+                    detailBlock("提醒时间", "每日 1 次 | 11:00 a.m.")
+                    detailBlock("服用方式", "温水送服用，随餐或餐后服用")
+                    detailBlock("周期", "28 天一周期，「服药 21 天，停药 7 天」")
+                    detailBlock("注意", "饮食与相互作用：避免西柚 / 西柚汁，西柚会抑制代谢雌激素的酶，使药物在体内水平升高，增加不良反应风险。")
+                }
+                NavigationLink(value: HealthDashboardView.HealthRoute.editReminder) {
+                    Text("修改提醒设置")
+                        .font(AppFont.body(20))
+                        .foregroundStyle(.black)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 18)
+                        .background(Color(hex: 0xD7EEF6), in: RoundedRectangle(cornerRadius: 20))
+                        .shadow(color: Color(hex: 0xCAE1E8), radius: 4, y: 4)
+                }
+                .buttonStyle(.plain)
+                .padding(.horizontal, 28)
+                .padding(.top, 40)
+            }
+            .padding(34)
+            .background(Color.white, in: RoundedRectangle(cornerRadius: 24))
+            .padding(.horizontal, 26)
+            .padding(.top, 90)
+        }
+    }
+
+    private func detailBlock(_ label: String, _ value: String) -> some View {
+        VStack(alignment: .leading, spacing: 7) {
+            Text(label).font(AppFont.body(14)).foregroundStyle(Color.black.opacity(0.6))
+            Text(value).font(AppFont.title(17)).foregroundStyle(Color.black)
+        }
+    }
+}
+
+// MARK: - 修改提醒设置 (2:21985)
+
 struct EditReminderView: View {
     @Environment(\.dismiss) private var dismiss
-    @State private var time = Date()
-    @State private var frequency = "每日"
 
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 16) {
-                DatePicker("提醒时间", selection: $time, displayedComponents: .hourAndMinute)
-                    .padding(16)
-                    .background(.white, in: RoundedRectangle(cornerRadius: 12))
-
-                Picker("频率", selection: $frequency) {
-                    ForEach(["每日", "每周", "隔日"], id: \.self) { Text($0) }
+        MedicationShell(title: "服药提醒", trailing: "ellipsis", onBack: { dismiss() }) {
+            VStack(alignment: .leading, spacing: 18) {
+                Text("添加药品").font(AppFont.title(24))
+                formField("药物 / 补剂名称", value: "口服雌激素制剂片（28片）", trailing: "camera")
+                optionGroup("药品类型", options: ["更年期相关药物", "营养补充剂", "其他"])
+                HStack { stepperField("剂量", value: "1", unit: "片"); stepperField("频次", value: "1", unit: "日") }
+                formField("服用方式", value: "温水送服用，随餐或餐后服用")
+                HStack { stepperField("开始时间", value: "1  2月  2026", unit: ""); stepperField("持续时间", value: "3", unit: "周") }
+                Text("添加提醒").font(AppFont.body(16))
+                HStack {
+                    Image("MedicationIllustration").resizable().scaledToFit().frame(width: 45, height: 45)
+                    Text("11 : 00").font(AppFont.title(30))
+                    Spacer()
+                    HStack { Text("+"); Text("-") }.font(AppFont.title(18))
                 }
-                .pickerStyle(.segmented)
-
-                Spacer()
-
-                PrimaryButton(title: "保存", color: .sleepSecondary) { dismiss() }
+                .padding(.horizontal, 18).frame(height: 61).background(Color(hex: 0x7BC5E2, alpha: 0.3), in: Capsule())
+                Button("完成设置") { dismiss() }.font(AppFont.body(20)).foregroundStyle(.black).frame(maxWidth: .infinity).padding(.vertical, 18).background(Color(hex: 0xD7EEF6), in: RoundedRectangle(cornerRadius: 20)).padding(.horizontal, 50)
             }
-            .padding(24)
-            .background(Color.pageBackground.ignoresSafeArea())
-            .navigationTitle("修改提醒")
-            .navigationBarTitleDisplayMode(.inline)
+            .padding(18)
+            .background(Color.white, in: RoundedRectangle(cornerRadius: 24))
+            .padding(.horizontal, 28)
+            .padding(.top, 90)
+        }
+    }
+
+    private func formField(_ label: String, value: String, trailing: String? = nil) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(label).font(AppFont.body(16))
+            HStack {
+                Text(value).font(AppFont.body(17))
+                Spacer()
+                if let trailing { Image(systemName: trailing).frame(width: 60, height: 41).background(Color(hex: 0x7BC5E2)) }
+            }
+            .padding(.horizontal, 14).frame(height: 41).overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.black.opacity(0.09)))
+        }
+    }
+
+    private func optionGroup(_ label: String, options: [String]) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(label).font(AppFont.body(16))
+            VStack(spacing: 4) {
+                ForEach(options, id: \.self) { option in
+                    HStack { Circle().fill(Color(hex: 0x7BC5E2, alpha: 0.6)).frame(width: 32, height: 32); Text(option); Spacer(); Circle().stroke(Color(hex: 0x7BC5E2, alpha: 0.35), lineWidth: 2).frame(width: 16, height: 16) }
+                        .padding(.horizontal, 8).frame(height: 36).background(Color.cultured, in: RoundedRectangle(cornerRadius: 12))
+                }
+            }
+            .padding(.leading, 88)
+        }
+    }
+
+    private func stepperField(_ label: String, value: String, unit: String) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(label).font(AppFont.body(16))
+            HStack { Text(value).font(AppFont.title(15)); Spacer(); Text(unit).font(AppFont.title(15)) }
+                .padding(.horizontal, 16).frame(height: 41).overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.black.opacity(0.09)))
         }
     }
 }
 
-// P7.22 我的药品 (2:21921)
+// MARK: - 我的药品
+
 struct MyMedicationsView: View {
-    @Query(sort: \Medication.createdAt, order: .forward)
-    private var medications: [Medication]
+    @Environment(\.dismiss) private var dismiss
+    private let meds = ["大豆异黄酮", "雌激素制剂片", "鱼油", "褪黑素"]
 
     var body: some View {
-        ScreenScaffold(title: "我的药品", trailingIcon: "plus") {
-            ScrollView(showsIndicators: false) {
-                VStack(spacing: 12) {
-                    ForEach(medications) { med in
-                        HStack {
-                            Image("MedicationIllustration")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 36, height: 36)
-                                .padding(2)
-                                .background(Color.healthPinkLight, in: Circle())
-                            Text(med.name).bodyStyle(14)
-                            Spacer()
-                            Image(systemName: "chevron.right").font(.system(size: 12))
-                                .foregroundStyle(Color.textSecondary)
-                        }
-                        .padding(16)
-                        .background(.white, in: RoundedRectangle(cornerRadius: 16))
+        MedicationShell(title: "我的药品", trailing: "plus", trailingRoute: .editReminder, onBack: { dismiss() }) {
+            VStack(spacing: 14) {
+                ForEach(meds, id: \.self) { med in
+                    HStack {
+                        Image("MedicationIllustration").resizable().scaledToFit().frame(width: 58, height: 58).padding(8).background(Color(hex: 0x7BC5E2, alpha: 0.15), in: RoundedRectangle(cornerRadius: 10))
+                        Text(med).font(AppFont.title(16))
+                        Spacer()
+                        Image(systemName: "chevron.right").font(.system(size: 13)).foregroundStyle(Color.textSecondary)
                     }
+                    .padding(16)
+                    .background(Color.white, in: RoundedRectangle(cornerRadius: 20))
                 }
-                .padding(24)
             }
+            .padding(.horizontal, 28)
+            .padding(.top, 92)
         }
+    }
+}
+
+private struct MedicationShell<Content: View>: View {
+    let title: String
+    let trailing: String
+    var trailingRoute: HealthDashboardView.HealthRoute? = nil
+    let onBack: () -> Void
+    @ViewBuilder let content: () -> Content
+
+    var body: some View {
+        ScrollView(showsIndicators: false) { content().padding(.bottom, 36) }
+            .background(Color.pageBackground.ignoresSafeArea())
+            .toolbar(.hidden, for: .navigationBar)
+            .overlay(alignment: .top) {
+                ZStack {
+                    Color.pageBackground.ignoresSafeArea(edges: .top).frame(height: 108)
+                    HStack {
+                        Button(action: onBack) { Image(systemName: "arrow.left").font(.system(size: 18)).foregroundStyle(.black) }
+                        Spacer()
+                        Text(title).font(AppFont.title(24)).tracking(1.44)
+                        Spacer()
+                        if let trailingRoute {
+                            NavigationLink(value: trailingRoute) {
+                                Image(systemName: trailing)
+                                    .frame(width: 39, height: 39)
+                                    .background(Color.white, in: Circle())
+                            }
+                            .buttonStyle(.plain)
+                        } else {
+                            Image(systemName: trailing)
+                                .frame(width: 39, height: 39)
+                                .background(Color.white, in: Circle())
+                        }
+                    }
+                    .padding(.horizontal, 34).padding(.top, 42)
+                }
+            }
     }
 }

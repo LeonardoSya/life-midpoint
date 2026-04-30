@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		017BC9AE0857127AFEE8110D /* LetterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B846380EE1D3991ACAF4DB /* LetterCard.swift */; };
+		02445FD4E522C9E850317B6B /* WriteLetterFlowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84DEA1E16D3A01645EDE174 /* WriteLetterFlowViews.swift */; };
 		0311D6A6F44BCD595AE6925A /* DataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADCE0E8704A4B360DF4D6A0 /* DataSeeder.swift */; };
 		0368D7BB486D14730BB172BF /* DiaryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4775F15568CAF668F40085 /* DiaryModels.swift */; };
 		0373198ABC229443E8644DA6 /* PostOfficeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2211E8BD036FB10FA8E95124 /* PostOfficeModels.swift */; };
@@ -50,6 +51,7 @@
 		7F4733FE34ADAA28B9345D24 /* OnboardingStepData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612B2CA30B549713B5F26FCA /* OnboardingStepData.swift */; };
 		7F68C3A468E8C8834A192344 /* StampObtainedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8692F040DE6FFF9630EE273E /* StampObtainedView.swift */; };
 		7FBAB31DE9317946AB654D5C /* intro_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 565DF1C7326CCB7D7EC142AE /* intro_music.mp3 */; };
+		824C09761B4C20EA17D06F4B /* SideNavigationDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29098D0D483D8FEFCAB448 /* SideNavigationDrawer.swift */; };
 		8495A98642BC6528D33149C8 /* DiaryLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C859C249FC41107214E86D7F /* DiaryLoadingView.swift */; };
 		84C741F1E357A0E3B88D5620 /* OnboardingStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E2BE5DA5D1973574505480 /* OnboardingStepView.swift */; };
 		8C1798805C0DC122C3594981 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCC4E95C013DB56991C3EB /* SettingsView.swift */; };
@@ -81,6 +83,7 @@
 		E352906F5C1CB9E2A097E5A4 /* SourceHanSerifCN-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F5B2E72B72B9CD900A988DAF /* SourceHanSerifCN-ExtraLight.otf */; };
 		E3BC8DF295CF28FC5ACA1640 /* AppTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53EFE0F1AAC526C8D89B2D5 /* AppTypography.swift */; };
 		E40AA1D40C0B725CE8825B18 /* LetterSentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368C5462F809E7F32D5C83EF /* LetterSentView.swift */; };
+		E5BB553C53352A0ACABB2BF6 /* DiaryAgentClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86C5110153A84C51388B0C6 /* DiaryAgentClient.swift */; };
 		E9198019799F2C8CD2711FE0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159687F41AC3C45CEE425921 /* LoginView.swift */; };
 		ECE2FDE445FAAFE6A437A681 /* MonthlyReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000820B3ADAADBE5A443171 /* MonthlyReportView.swift */; };
 		ED1A854E78D3A7D748A9E37C /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60629E124F646CB81E9B6A2 /* AppColors.swift */; };
@@ -151,6 +154,8 @@
 		9A3A9A9893C2DD7012A36F2E /* MicroBehaviorExperimentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicroBehaviorExperimentView.swift; sourceTree = "<group>"; };
 		9D6E4C46D53CFCD03AD2C577 /* DebugPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPreview.swift; sourceTree = "<group>"; };
 		A300876CA01BBDAA301B071A /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		A86C5110153A84C51388B0C6 /* DiaryAgentClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryAgentClient.swift; sourceTree = "<group>"; };
+		AB29098D0D483D8FEFCAB448 /* SideNavigationDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNavigationDrawer.swift; sourceTree = "<group>"; };
 		AE3D3BCC8FA152D1FFD3E85B /* HealthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModels.swift; sourceTree = "<group>"; };
 		B11A35C98B8A3744A5302F4A /* WriteLetterDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteLetterDefaultView.swift; sourceTree = "<group>"; };
 		B2687F5BAD6A9C583B0B88AB /* StampAlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampAlbumView.swift; sourceTree = "<group>"; };
@@ -170,6 +175,7 @@
 		E55D727D0564C85466D8F735 /* BottomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBar.swift; sourceTree = "<group>"; };
 		E5623CD0E17872C1C7C36633 /* MindHeroCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindHeroCard.swift; sourceTree = "<group>"; };
 		E60629E124F646CB81E9B6A2 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		E84DEA1E16D3A01645EDE174 /* WriteLetterFlowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteLetterFlowViews.swift; sourceTree = "<group>"; };
 		EC93299CE25746C6FE1D2934 /* MindRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindRepository.swift; sourceTree = "<group>"; };
 		F5B2E72B72B9CD900A988DAF /* SourceHanSerifCN-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSerifCN-ExtraLight.otf"; sourceTree = "<group>"; };
 		F952BA1BD96189A2D8C4EECD /* BreathingExitDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingExitDialog.swift; sourceTree = "<group>"; };
@@ -424,6 +430,7 @@
 			children = (
 				E55D727D0564C85466D8F735 /* BottomTabBar.swift */,
 				7C968E9ADEF3FCDF7E8A9AE8 /* MainContainerView.swift */,
+				AB29098D0D483D8FEFCAB448 /* SideNavigationDrawer.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -450,6 +457,7 @@
 				166F79B173DA1A1F119AB81D /* PenPalListView.swift */,
 				B8DA423C8BB36777CADDD4D3 /* PostOfficeView.swift */,
 				B11A35C98B8A3744A5302F4A /* WriteLetterDefaultView.swift */,
+				E84DEA1E16D3A01645EDE174 /* WriteLetterFlowViews.swift */,
 				0DCF9BC31BC62CE134EC82E9 /* WriteLetterView.swift */,
 				9B28131A3AA284FC6911E8E3 /* Components */,
 			);
@@ -478,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				4064BCB49403A4A56B0385BC /* AudioPlayer.swift */,
+				A86C5110153A84C51388B0C6 /* DiaryAgentClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -500,6 +509,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94C3946E47765AC3509D747E /* Build configuration list for PBXNativeTarget "LifeMidpoint" */;
 			buildPhases = (
+				041F089070907E846339970B /* Start Local Agent Server */,
 				E43E7C017897B1202E0DB40D /* Sources */,
 				A64DD2345BCA445DD2E86FFC /* Resources */,
 			);
@@ -568,6 +578,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		041F089070907E846339970B /* Start Local Agent Server */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Local Agent Server";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/scripts/start_agent_server.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E43E7C017897B1202E0DB40D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -587,6 +619,7 @@
 				F55764BBEC007A0F3F86E214 /* BreathingExitDialog.swift in Sources */,
 				0311D6A6F44BCD595AE6925A /* DataSeeder.swift in Sources */,
 				7167AA095F50DE59D9AEEAA9 /* DebugPreview.swift in Sources */,
+				E5BB553C53352A0ACABB2BF6 /* DiaryAgentClient.swift in Sources */,
 				8495A98642BC6528D33149C8 /* DiaryLoadingView.swift in Sources */,
 				0368D7BB486D14730BB172BF /* DiaryModels.swift in Sources */,
 				429870B070CB08520ECB4A23 /* DiaryRepository.swift in Sources */,
@@ -631,6 +664,7 @@
 				591D996AB39ACEA983DED673 /* ScreenScaffold.swift in Sources */,
 				B0EB52EBC07CC56C405EC72F /* SectionHeader.swift in Sources */,
 				8C1798805C0DC122C3594981 /* SettingsView.swift in Sources */,
+				824C09761B4C20EA17D06F4B /* SideNavigationDrawer.swift in Sources */,
 				C98C31CA6AB1170492F262D3 /* SleepView.swift in Sources */,
 				5DBD0ADCA0BFE2086E03AC15 /* SlideToConfirmButton.swift in Sources */,
 				95D01EEA3FDD759987DE3E69 /* StampAlbumView.swift in Sources */,
@@ -643,6 +677,7 @@
 				08998D9108BB8EEF22BC3B59 /* UserRepository.swift in Sources */,
 				9801172213E1B1C21609FA20 /* WeeklySummaryView.swift in Sources */,
 				F808EF2F2E0B328A103C1E41 /* WriteLetterDefaultView.swift in Sources */,
+				02445FD4E522C9E850317B6B /* WriteLetterFlowViews.swift in Sources */,
 				6E2F34CCB8E66DD54A0A0A77 /* WriteLetterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

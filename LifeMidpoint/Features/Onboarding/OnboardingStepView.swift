@@ -35,6 +35,13 @@ struct OnboardingStepView: View {
         return f
     }()
 
+    /// Figma 画布为 440pt 宽, 对话气泡宽 373pt, 左右约 33pt 留白。
+    /// 这里用当前屏幕宽度减 74pt 做硬约束, 避免全屏背景图/ignoresSafeArea
+    /// 让 `.infinity` 气泡在某些设备上横向溢出。
+    private var dialogueGroupWidth: CGFloat {
+        max(260, UIScreen.main.bounds.width - 74)
+    }
+
     var body: some View {
         ZStack {
             backgroundImage
@@ -122,7 +129,7 @@ struct OnboardingStepView: View {
                 dialogueBubble(rendered(text))
             }
         }
-        .frame(maxWidth: .infinity)
+        .frame(width: dialogueGroupWidth)
     }
 
     /// 将对话文案中的 "xx" 占位符替换成 step10 用户填写的姓名.

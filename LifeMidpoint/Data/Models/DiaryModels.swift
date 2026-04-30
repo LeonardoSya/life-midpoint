@@ -24,6 +24,29 @@ final class DiarySession {
     }
 }
 
+// MARK: - 日记总结记录
+
+/// 已完成/已生成的日记总结.
+///
+/// 注意: `DiarySession` / `DiaryMessage` 是本次运行期对话状态, App 冷启动会清空;
+/// `DiaryEntry` 是真正留存到「日记总结」页的记录, 不随对话历史清空。
+@Model
+final class DiaryEntry {
+    var entryDate: Date
+    var title: String
+    var body: String
+    var summaryText: String
+    var createdAt: Date
+
+    init(entryDate: Date = Date(), title: String, body: String, summaryText: String) {
+        self.entryDate = Calendar.current.startOfDay(for: entryDate)
+        self.title = title
+        self.body = body
+        self.summaryText = summaryText
+        self.createdAt = Date()
+    }
+}
+
 // MARK: - 聊天消息
 
 /// 一条日记/AI 对话气泡.

@@ -26,6 +26,25 @@ struct RootView: View {
         case .postOffice: PostOfficeView()
         case .writeLetter: WriteLetterView()
         case .writeLetterDefault: WriteLetterDefaultView()
+        case .stampSelection:
+            NavigationStack {
+                StampSelectionView(selectedStamp: StampLibrary.goldStamps[1]) { _ in }
+            }
+        case .letterPreview:
+            NavigationStack {
+                LetterPreviewView(
+                    content: "此时云朵很美，身处旅行途中。觉察充满期待，寄出一份今日见闻。",
+                    alias: "屋檐与猫",
+                    recipientMode: "stranger",
+                    mood: "旅行途中",
+                    feeling: "充满期待",
+                    weather: "云朵很美",
+                    letterType: "今日见闻",
+                    stamp: StampLibrary.goldStamps[1],
+                    onSend: {},
+                    onEdit: {}
+                )
+            }
         case .letterShowcase: LetterShowcaseView()
         case .letterSent: LetterSentView()
         case .monthlyReport: NavigationStack { MonthlyReportView() }
@@ -46,6 +65,7 @@ struct RootView: View {
         case .knowledgeBase: NavigationStack { KnowledgeBaseView() }
         case .health: HealthDashboardView()
         case .periodTracking: NavigationStack { PeriodTrackingView() }
+        case .addPeriod: AddPeriodView()
         case .symptomTracking: NavigationStack { SymptomTrackingView() }
         case .symptomDetail: NavigationStack { SymptomDetailView(symptomName: "潮热") }
         case .sleep: NavigationStack { SleepView() }
@@ -53,7 +73,7 @@ struct RootView: View {
         case .healthSummary: NavigationStack { HealthSummaryView() }
         case .medicationRecord: NavigationStack { MedicationRecordView() }
         case .medicationReminder: NavigationStack { MedicationReminderView() }
-        case .editReminder: EditReminderView()
+        case .editReminder: NavigationStack { EditReminderView() }
         case .myMedications: NavigationStack { MyMedicationsView() }
         case .settings: SettingsView()
         case .weeklySummary: NavigationStack { WeeklySummaryView(variant: 0) }

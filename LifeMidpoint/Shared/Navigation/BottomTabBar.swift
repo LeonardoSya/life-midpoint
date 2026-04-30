@@ -25,7 +25,7 @@ struct BottomTabBar: View {
             }
         }
         .padding(.horizontal, 12)
-        .padding(.top, 4)
+        .padding(.top, 2)
         .padding(.bottom, 0)
         .background(.ultraThinMaterial)
     }
@@ -41,11 +41,11 @@ struct BottomTabBar: View {
         } label: {
             VStack(spacing: 2) {
                 Image(systemName: selected ? item.activeIcon : item.icon)
-                    .font(.system(size: 18, weight: selected ? .semibold : .regular))
-                    .frame(height: 22)
+                    .font(.system(size: 16, weight: selected ? .semibold : .regular))
+                    .frame(height: 19)
 
                 Text(item.module.rawValue)
-                    .font(AppFont.body(9))
+                    .font(AppFont.body(8))
                     .tracking(0.4)
             }
             .foregroundStyle(selected ? Color.textPrimary.opacity(0.9) : Color.textSecondary.opacity(0.45))

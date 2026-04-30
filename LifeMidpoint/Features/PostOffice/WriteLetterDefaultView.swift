@@ -3,7 +3,12 @@ import SwiftUI
 // P4.10 写信默认页 (2:19723)
 struct WriteLetterDefaultView: View {
     @Environment(\.dismiss) private var dismiss
-    @State private var letterText = ""
+    @Binding var letterText: String
+    @FocusState private var isFocused: Bool
+
+    init(letterText: Binding<String> = .constant("")) {
+        self._letterText = letterText
+    }
 
     var body: some View {
         ZStack {
@@ -12,17 +17,36 @@ struct WriteLetterDefaultView: View {
             VStack(spacing: 0) {
                 header
 
-                topHint
-                    .padding(.horizontal, 32)
-                    .padding(.top, 32)
+                ZStack(alignment: .topLeading) {
+                    TextEditor(text: $letterText)
+                        .font(AppFont.body(18))
+                        .foregroundStyle(Color.inkBrownDark)
+                        .lineSpacing(8)
+                        .scrollContentBackground(.hidden)
+                        .background(Color.clear)
+                        .focused($isFocused)
+                        .padding(.horizontal, 32)
+                        .padding(.top, 70)
 
-                Spacer()
+                    if letterText.isEmpty {
+                        topHint
+                            .padding(.horizontal, 32)
+                            .padding(.top, 86)
+                            .allowsHitTesting(false)
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
 
                 bottomToolbar
-                    .padding(.horizontal, 24)
+                    .padding(.horizontal, 32)
                     .padding(.bottom, 24)
             }
             .responsiveFill()
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                isFocused = true
+            }
         }
     }
 
@@ -59,14 +83,9 @@ struct WriteLetterDefaultView: View {
 
     private var topHint: some View {
         HStack(alignment: .top, spacing: 0) {
-            Rectangle()
-                .fill(Color.inkBrownDark)
-                .frame(width: 2)
-                .padding(.top, 2)
             Text("见字如面...分享一件开心或不开心的事情吧 😊")
                 .font(AppFont.body(15))
                 .foregroundStyle(Color.inkBrownDark)
-                .padding(.leading, 12)
                 .lineSpacing(4)
             Spacer()
         }
@@ -87,7 +106,11 @@ struct WriteLetterDefaultView: View {
 
             Spacer()
 
-            Button { } label: {
+            Button {
+                Haptic.medium()
+                isFocused = false
+                dismiss()
+            } label: {
                 Image(systemName: "checkmark")
                     .font(.system(size: 16, weight: .medium))
                     .foregroundStyle(.white)

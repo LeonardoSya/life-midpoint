@@ -15,6 +15,11 @@ targets:
     platform: iOS
     sources:
       - path: LifeMidpoint
+    preBuildScripts:
+      - name: Start Local Agent Server
+        script: |
+          "$SRCROOT/scripts/start_agent_server.sh"
+        basedOnDependencyAnalysis: false
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.lifemidpoint.app
@@ -34,6 +39,9 @@ targets:
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
         UIApplicationSupportsIndirectInputEvents: true
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+        NSLocalNetworkUsageDescription: 用于连接本机运行的日记智能体服务。
         UIUserInterfaceStyle: Light
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait

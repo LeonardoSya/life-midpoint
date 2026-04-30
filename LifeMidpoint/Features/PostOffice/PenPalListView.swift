@@ -9,25 +9,26 @@ struct PenPalListView: View {
 
     var body: some View {
         ScrollView(showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: 28) {
                 headerRow
 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 12) {
+                    HStack(spacing: 20) {
                         ForEach(penPals) { pal in
                             penPalCard(name: pal.name, info: pal.info, time: relativeTime(pal.lastActiveAt))
                         }
                     }
-                    .padding(.horizontal, 4)
+                    .padding(.horizontal, 0)
+                    .padding(.vertical, 4)
                 }
 
-                Spacer().frame(height: 20)
+                Spacer().frame(height: 34)
 
-                calendarSection
-                letterPreview
+                calendarLetterPanel
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 16)
+            .padding(.horizontal, 19)
+            .padding(.top, 104)
+            .padding(.bottom, 32)
         }
         .background(Color.pageBackground.ignoresSafeArea())
         .navigationBarTitleDisplayMode(.inline)
@@ -45,12 +46,16 @@ struct PenPalListView: View {
     private var headerRow: some View {
         HStack {
             Text("我的笔友")
-                .font(AppFont.title(14))
-                .foregroundStyle(Color.textSecondary)
+                .font(AppFont.body(16))
+                .foregroundStyle(Color.textPrimary.opacity(0.8))
             Spacer()
-            Text("查看全部 →")
-                .font(AppFont.caption(12))
-                .foregroundStyle(Color.textSecondary)
+            HStack(spacing: 4) {
+                Text("查看全部")
+                    .font(AppFont.body(13))
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 9))
+            }
+            .foregroundStyle(Color.mindPrimary.opacity(0.7))
         }
     }
 
@@ -62,20 +67,20 @@ struct PenPalListView: View {
     }
 
     private func penPalCard(name: String, info: String, time: String) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 4) {
             Text(name)
-                .font(AppFont.title(14))
-                .foregroundStyle(Color.textPrimary)
+                .font(AppFont.title(16))
+                .foregroundStyle(Color(hex: 0x454545))
             Text(info)
-                .font(AppFont.caption(10))
-                .foregroundStyle(Color.textSecondary)
+                .font(AppFont.body(11))
+                .foregroundStyle(Color(hex: 0x9D9D9D))
 
             Spacer()
 
             HStack {
                 Text(time)
-                    .font(AppFont.caption(10))
-                    .foregroundStyle(Color.textSecondary)
+                    .font(AppFont.body(12))
+                    .foregroundStyle(Color(hex: 0x8A8A8A))
                 Spacer()
                 Circle()
                     .fill(.white)
@@ -87,9 +92,26 @@ struct PenPalListView: View {
                     )
             }
         }
-        .padding(14)
-        .frame(width: 150, height: 110)
-        .background(Color.paperWarm.opacity(0.5), in: RoundedRectangle(cornerRadius: 16))
+        .padding(16)
+        .frame(width: 150, height: 140)
+        .background(Color.postCream.opacity(0.8), in: RoundedRectangle(cornerRadius: 20))
+        .shadow(color: .black.opacity(0.18), radius: 2, y: 4)
+    }
+
+    private var calendarLetterPanel: some View {
+        VStack(spacing: 28) {
+            calendarSection
+            letterPreview
+        }
+        .padding(.horizontal, 24)
+        .padding(.top, 48)
+        .padding(.bottom, 36)
+        .frame(maxWidth: .infinity)
+        .background(
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(Color(hex: 0xFFF9F7).opacity(0.7))
+        )
+        .shadow(color: .black.opacity(0.16), radius: 4, y: 4)
     }
 
     private var calendarSection: some View {

@@ -2,7 +2,14 @@ import SwiftUI
 
 struct DiarySummaryView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
     let summaryText: String
+    var onComplete: (() -> Void)?
+
+    init(summaryText: String, onComplete: (() -> Void)? = nil) {
+        self.summaryText = summaryText
+        self.onComplete = onComplete
+    }
 
     var body: some View {
         ZStack {
@@ -58,7 +65,12 @@ struct DiarySummaryView: View {
 
     private var completeButton: some View {
         Button {
-            dismiss()
+            PostOfficeRepository(context: modelContext).grantStamp(definitionId: "gold_2", source: "diary_summary")
+            if let onComplete {
+                onComplete()
+            } else {
+                dismiss()
+            }
         } label: {
             Text("完成记录")
                 .font(AppFont.body(14))

@@ -27,6 +27,7 @@ enum AppDatabase {
         AppSettings.self,
         // 日记
         DiarySession.self,
+        DiaryEntry.self,
         DiaryMessage.self,
         EmotionLog.self,
         // 心境

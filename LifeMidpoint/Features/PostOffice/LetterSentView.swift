@@ -3,6 +3,13 @@ import SwiftUI
 // P4.16 信件已寄出确认 (2:22419)
 struct LetterSentView: View {
     @Environment(\.dismiss) private var dismiss
+    let stampImageName: String
+    var onComplete: (() -> Void)?
+
+    init(stampImageName: String = "StampOnLetter", onComplete: (() -> Void)? = nil) {
+        self.stampImageName = stampImageName
+        self.onComplete = onComplete
+    }
 
     var body: some View {
         ZStack {
@@ -29,7 +36,13 @@ struct LetterSentView: View {
 
                 Spacer()
 
-                Button { dismiss() } label: {
+                Button {
+                    if let onComplete {
+                        onComplete()
+                    } else {
+                        dismiss()
+                    }
+                } label: {
                     Text("完成")
                         .font(AppFont.body(16))
                         .foregroundStyle(Color.mindPrimary)
@@ -82,7 +95,7 @@ struct LetterSentView: View {
                 .shadow(color: Color.textPrimary.opacity(0.06), radius: 16, y: 12)
 
             // Floating stamp in top-right
-            Image("StampOnLetter")
+            Image(stampImageName)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 52, height: 68)

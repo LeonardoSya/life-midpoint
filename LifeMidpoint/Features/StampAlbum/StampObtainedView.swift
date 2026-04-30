@@ -47,7 +47,7 @@ struct StampObtainedView: View {
                 Spacer()
 
                 Button { dismiss() } label: {
-                    Text("好的")
+                    Text("收下")
                         .font(AppFont.body(16))
                         .foregroundStyle(Color.mindPrimary)
                         .underline()

@@ -139,7 +139,7 @@ let onboardingSteps: [OnboardingStep] = [
         inputKind: nil,
         ctaText: nil
     ),
-    // Step 12: 梦幻漩涡
+    // Step 12: 梦幻漩涡，兔子逃脱
     OnboardingStep(
         index: 11,
         imageName: "OnboardingStep12",
@@ -150,10 +150,18 @@ let onboardingSteps: [OnboardingStep] = [
         inputKind: nil,
         ctaText: nil
     ),
-    // Step 13: 海边，三个角色相遇
-    // Figma 设计: 前 2 条角色对话贴顶, 第 3 条内心独白贴底.
+    // Step 13: 突然出现漩涡
     OnboardingStep(
         index: 12,
+        imageName: "OnboardingStep12",
+        dialogues: ["突然！..."],
+        inputKind: nil,
+        ctaText: nil
+    ),
+    // Step 14: 海边，三个角色相遇
+    // Figma 设计: 前 2 条角色对话贴顶, 第 3 条内心独白贴底.
+    OnboardingStep(
+        index: 13,
         imageName: "OnboardingStep13",
         dialogues: [
             "小女孩:(笑)你终于来了!我们等了你好久。",
@@ -164,9 +172,9 @@ let onboardingSteps: [OnboardingStep] = [
         ctaText: nil,
         bubbleLayout: .mixed(topCount: 2)
     ),
-    // Step 14: 海边咖啡厅，开始旅程
+    // Step 15: 海边咖啡厅，开始旅程
     OnboardingStep(
-        index: 13,
+        index: 14,
         imageName: "OnboardingStep14",
         dialogues: ["听着海浪声，你回想着发生的这一切。\n好想记录一些什么。"],
         inputKind: nil,

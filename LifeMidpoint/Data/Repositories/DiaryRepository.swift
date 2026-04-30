@@ -43,6 +43,33 @@ struct DiaryRepository {
         return (try? context.fetch(d)) ?? []
     }
 
+    @discardableResult
+    func createEntry(title: String, body: String, summaryText: String, date: Date = Date()) -> DiaryEntry {
+        let entry = DiaryEntry(entryDate: date, title: title, body: body, summaryText: summaryText)
+        context.insert(entry)
+        try? context.save()
+        return entry
+    }
+
+    /// 清空所有日记对话历史.
+    ///
+    /// 当前产品决策: 日记对话不做本地持久化, 每次 App 冷启动都应为空。
+    /// SwiftData 仍用于本次运行期间驱动 UI/逐字写入, 但启动时会清理旧 session/message。
+    func deleteAllConversationHistory() {
+        let sessions = (try? context.fetch(FetchDescriptor<DiarySession>())) ?? []
+        for session in sessions {
+            context.delete(session)
+        }
+
+        // 防御性清理: 如果历史迁移或异常中出现 orphan message, 也一起删除。
+        let orphanMessages = (try? context.fetch(FetchDescriptor<DiaryMessage>())) ?? []
+        for message in orphanMessages {
+            context.delete(message)
+        }
+
+        try? context.save()
+    }
+
     // MARK: - Messages
 
     /// 追加一条消息到指定 session.
@@ -63,6 +90,23 @@ struct DiaryRepository {
             sortBy: [SortDescriptor(\.sentAt, order: .forward)]
         )
         return (try? context.fetch(d)) ?? []
+    }
+
+    func updateMessageText(_ message: DiaryMessage, text: String, persist: Bool = false) {
+        message.text = text
+        message.session?.updatedAt = Date()
+        if persist {
+            try? context.save()
+        }
+    }
+
+    func save() {
+        try? context.save()
+    }
+
+    func delete(_ message: DiaryMessage) {
+        context.delete(message)
+        try? context.save()
     }
 
     // MARK: - Summary

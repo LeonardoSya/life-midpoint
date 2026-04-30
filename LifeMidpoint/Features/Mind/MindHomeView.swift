@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct MindHomeView: View {
+    var onBackToDiary: (() -> Void)? = nil
+    var useOwnNavigationStack = true
+
     private let categories: [(icon: String, name: String)] = [
         ("waveform.path.ecg", "身体与情绪"),
         ("plus.square", "情绪急救"),
@@ -27,35 +30,54 @@ struct MindHomeView: View {
     }()
 
     var body: some View {
-        NavigationStack(path: $path) {
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 19) {
-                    MindHeroCard()
-                    PracticeAndExperimentSection()
-                    knowledgeCategorySection
-                }
-                .padding(.horizontal, 24)
-                .padding(.top, 37)
+        if useOwnNavigationStack {
+            NavigationStack(path: $path) {
+                content
+                    .navigationDestination(for: MindRoute.self) { route in
+                        mindDestination(route)
+                    }
             }
-            .background(Color.pageBackground.ignoresSafeArea())
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("心境")
-                        .font(AppFont.title(24))
-                        .tracking(1.44)
+        } else {
+            content
+        }
+    }
+
+    private var content: some View {
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 19) {
+                if let onBackToDiary {
+                    HStack {
+                        ModuleHomeBackButton(action: onBackToDiary)
+                        Spacer()
+                    }
                 }
+                MindHeroCard()
+                PracticeAndExperimentSection()
+                knowledgeCategorySection
             }
-            .navigationDestination(for: MindRoute.self) { route in
-                switch route {
-                case .breathing: BreathingExerciseView()
-                case .microBehavior: MicroBehaviorExperimentView()
-                case .microEmotion: MicroEmotionStartView()
-                case .psychologyCard: PsychologyCardView()
-                case .knowledge: KnowledgeBaseView()
-                case .emotionDetail(let name): EmotionDetailView(emotion: name)
-                }
+            .padding(.horizontal, 24)
+            .padding(.top, 37)
+        }
+        .background(Color.pageBackground.ignoresSafeArea())
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("心境")
+                    .font(AppFont.title(24))
+                    .tracking(1.44)
             }
+        }
+    }
+
+    @ViewBuilder
+    func mindDestination(_ route: MindRoute) -> some View {
+        switch route {
+        case .breathing: BreathingExerciseView()
+        case .microBehavior: MicroBehaviorExperimentView()
+        case .microEmotion: MicroEmotionStartView()
+        case .psychologyCard: PsychologyCardView()
+        case .knowledge: KnowledgeBaseView()
+        case .emotionDetail(let name): EmotionDetailView(emotion: name)
         }
     }
 

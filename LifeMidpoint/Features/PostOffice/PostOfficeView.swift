@@ -2,6 +2,9 @@ import SwiftUI
 import SwiftData
 
 struct PostOfficeView: View {
+    var onBackToDiary: (() -> Void)? = nil
+    var useOwnNavigationStack = true
+
     @State private var showWriteLetter = false
     /// 直接订阅最近 5 封信件 (用户每寄一封自动出现, 无需手动刷新).
     @Query(sort: \Letter.createdAt, order: .reverse)
@@ -23,33 +26,53 @@ struct PostOfficeView: View {
     }()
 
     var body: some View {
-        NavigationStack(path: $path) {
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 12) {
-                    postOfficeHeader
-                    HeroWriteCard { showWriteLetter = true }
-                    NavigationLink(value: PostOfficeRoute.monthlyReport) {
-                        SummaryBanner()
+        if useOwnNavigationStack {
+            NavigationStack(path: $path) {
+                content
+                    .navigationDestination(for: PostOfficeRoute.self) { route in
+                        postOfficeDestination(route)
                     }
-                    .buttonStyle(.plain)
-                    correspondenceSection
-                    stampCollectionSection
+            }
+        } else {
+            content
+        }
+    }
+
+    private var content: some View {
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 12) {
+                if let onBackToDiary {
+                    HStack {
+                        ModuleHomeBackButton(action: onBackToDiary)
+                        Spacer()
+                    }
+                    .padding(.bottom, 4)
                 }
-                .padding(.horizontal, 24)
-            }
-            .background(Color.pageBackground.ignoresSafeArea())
-            .toolbar(.hidden, for: .navigationBar)
-            .sheet(isPresented: $showWriteLetter) {
-                WriteLetterView()
-            }
-            .navigationDestination(for: PostOfficeRoute.self) { route in
-                switch route {
-                case .penPalList: PenPalListView()
-                case .penPalDetail(let name): PenPalDetailView(name: name)
-                case .stampAlbum: StampAlbumView()
-                case .monthlyReport: MonthlyReportView()
+                HeroWriteCard { showWriteLetter = true }
+                NavigationLink(value: PostOfficeRoute.monthlyReport) {
+                    SummaryBanner()
                 }
+                .buttonStyle(.plain)
+                correspondenceSection
+                stampCollectionSection
             }
+            .padding(.horizontal, 24)
+            .padding(.top, onBackToDiary == nil ? 56 : 28)
+        }
+        .background(Color.pageBackground.ignoresSafeArea())
+        .toolbar(.hidden, for: .navigationBar)
+        .sheet(isPresented: $showWriteLetter) {
+            WriteLetterView()
+        }
+    }
+
+    @ViewBuilder
+    func postOfficeDestination(_ route: PostOfficeRoute) -> some View {
+        switch route {
+        case .penPalList: PenPalListView()
+        case .penPalDetail(let name): PenPalDetailView(name: name)
+        case .stampAlbum: StampAlbumView()
+        case .monthlyReport: MonthlyReportView()
         }
     }
 
@@ -66,16 +89,6 @@ struct PostOfficeView: View {
         f.locale = Locale(identifier: "zh_CN")
         f.unitsStyle = .short
         return f.localizedString(for: date, relativeTo: Date())
-    }
-
-    private var postOfficeHeader: some View {
-        HStack {
-            Text("邮局")
-                .font(AppFont.title(22))
-                .foregroundStyle(Color.textPrimary)
-            Spacer()
-        }
-        .padding(.top, 8)
     }
 
     // MARK: - Correspondence
@@ -134,7 +147,7 @@ struct PostOfficeView: View {
                 NavigationLink(value: PostOfficeRoute.stampAlbum) {
                     StampCategoryCard(name: "候鸟归家",
                                       images: ["MigrationStamp18", "MigrationStamp19"],
-                                      collected: 2, total: 9)
+                                      collected: 2, total: 12)
                 }
                 .buttonStyle(.plain)
 
@@ -165,7 +178,7 @@ private struct HeroWriteCard: View {
                     Image("PostOfficeWriteIcon")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 22, height: 20)
+                        .frame(width: 22.5, height: 20)
                 )
 
             Text("写一封信")
@@ -235,6 +248,7 @@ private struct SummaryBanner: View {
             }
         }
         .padding(20)
+        .frame(height: 129)
         .background(.white, in: RoundedRectangle(cornerRadius: 24))
     }
 }
