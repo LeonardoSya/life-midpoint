@@ -1,0 +1,63 @@
+name: LifeMidpoint
+options:
+  bundleIdPrefix: com.lifemidpoint
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "26.2"
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+
+targets:
+  LifeMidpoint:
+    type: application
+    platform: iOS
+    sources:
+      - path: LifeMidpoint
+    preBuildScripts:
+      - name: Start Local Agent Server
+        script: |
+          "$SRCROOT/scripts/start_agent_server.sh"
+        basedOnDependencyAnalysis: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lifemidpoint.app
+        CODE_SIGN_STYLE: Automatic
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        GENERATE_INFOPLIST_FILE: false
+        # 本地 agent-server 地址. 模拟器用默认值 (127.0.0.1 即宿主 Mac) 就够;
+        # 真机调试时根目录 run.sh device 会通过命令行覆盖成
+        # Mac 的局域网 Bonjour 地址, 详见 AgentServerConfig.swift。
+        AGENT_SERVER_BASE_URL: http://127.0.0.1:8787
+    info:
+      path: LifeMidpoint/Generated/Info.plist
+      properties:
+        CFBundleDisplayName: 人生中点
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        AgentServerBaseURL: $(AGENT_SERVER_BASE_URL)
+        UILaunchScreen:
+          UIColorName: ""
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UIApplicationSupportsIndirectInputEvents: true
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+        NSLocalNetworkUsageDescription: 用于连接本机运行的日记智能体服务。
+        NSMicrophoneUsageDescription: 用于在写信时录音, 将你的声音转换成文字。
+        NSSpeechRecognitionUsageDescription: 用于把你口述的内容识别为文字, 帮你更快写完一封信。
+        UIUserInterfaceStyle: Light
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIAppFonts:
+          - SkyHeartClearSerifSC-Regular.ttf
+          - SourceHanSerifCN-Bold.otf
+          - SourceHanSerifCN-ExtraLight.otf

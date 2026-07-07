@@ -1,0 +1,141 @@
+# ============================================
+# macOS
+# ============================================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# ============================================
+# Xcode
+# ============================================
+## User settings
+xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+
+## Build generated
+build/
+build-device/
+DerivedData/
+*.xcscmblueprint
+*.xccheckout
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+## Obj-C/Swift specific
+*.hmap
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+## Xcode project: 本项目用 XcodeGen 管理, project.yml 是唯一 source of truth,
+## *.xcodeproj 整个都是 `xcodegen generate` 的产物, 不追踪 (避免生成的 pbxproj
+## 冲突, 也避免不小心把 xcuserstate 等纯本机状态提交进去)。
+*.xcodeproj/
+*.xcworkspace/
+/*.gcno
+
+# ============================================
+# Swift Package Manager
+# ============================================
+Packages/
+Package.pins
+Package.resolved
+.swiftpm/
+.build/
+
+# ============================================
+# CocoaPods
+# ============================================
+Pods/
+# Podfile.lock should typically be checked in, uncomment if you want to ignore
+# Podfile.lock
+
+# ============================================
+# Carthage
+# ============================================
+Carthage/Build/
+Carthage/Checkouts
+
+# ============================================
+# Accio dependency management
+# ============================================
+Dependencies/
+.accio/
+
+# ============================================
+# fastlane
+# ============================================
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# ============================================
+# Code Injection
+# ============================================
+iOSInjectionProject/
+
+# ============================================
+# Editors / IDEs
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/*
+!.cursor/settings.json
+
+# ============================================
+# Environment / Secrets
+# ============================================
+.env
+.env.local
+.env.*.local
+node_modules/
+*.pem
+*.key
+secrets.plist
+GoogleService-Info.plist.local
+
+# ============================================
+# Logs & Temp
+# ============================================
+*.log
+*.tmp
+tmp/
+
+# ============================================
+# 开发过程截图 (跟 Figma 设计稿逐页比对用, 体积较大,
+# 不进仓库; 需要时用 scripts/capture_screens.sh 重新生成)
+# ============================================
+screenshots/
