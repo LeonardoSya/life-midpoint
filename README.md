@@ -84,6 +84,9 @@ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 **agent-server 报 "LLM API key is not configured"**
 `agent-server/.env` 里的 `LLM_API_KEY` 没填或填错了，参考本文档「快速开始」一节。
 
+**编译报 `CodeSign ... resource fork, Finder information, or similar detritus not allowed`**
+这不是代码问题, 是 macOS「iCloud Drive 桌面与文稿同步」导致的: 如果项目被克隆/存放在 `~/Desktop` 或 `~/Documents` 下, 且这台 Mac 开启了 iCloud 同步这两个文件夹, 编译过程中新建出来的 `.app` 目录会被 iCloud 的文件供应方进程打上特殊的扩展属性, 导致签名失败。`run.sh` 已经把构建产物统一放到 `~/Library/Developer/Xcode/LifeMidpointRunData`（不受 iCloud 同步影响), 所以正常情况下不会再遇到这个问题; 如果你是老版本脚本或者自己手动 `xcodebuild`, 把项目移出 `~/Desktop`/`~/Documents`（比如放到 `~/Developer/` 下）就能解决。
+
 **换了新 Mac，git clone 下来发现没有 `.xcodeproj`**
 这是预期行为：项目用 XcodeGen 管理，`.xcodeproj` 不追踪进 git（避免生成文件冲突），跑一次 `./run.sh`（内部会调 `xcodegen generate`）就会自动生成。
 

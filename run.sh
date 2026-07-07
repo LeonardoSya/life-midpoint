@@ -30,6 +30,15 @@ SCHEME="LifeMidpoint"
 BUNDLE_ID="com.lifemidpoint.app"
 AGENT_PORT="${AGENT_PORT:-8787}"
 
+# 构建产物故意放在 ~/Library 下, 不放进项目目录本身:
+# 如果项目被克隆/存放在 ~/Desktop、~/iCloud Drive 之类被"iCloud Drive 桌面与
+# 文稿"同步的目录里, 编译过程中新建出来的 .app 目录会被 iCloud 的文件供应方进程
+# 打上 com.apple.FinderInfo / com.apple.fileprovider.* 扩展属性, 导致最后一步
+# CodeSign 报错 "resource fork, Finder information, or similar detritus not
+# allowed" 而整体构建失败。~/Library 不受该同步功能影响, 从根源避免这个坑,
+# 不管项目本身放在电脑哪个目录都不受影响。
+DERIVED_DATA_BASE="$HOME/Library/Developer/Xcode/LifeMidpointRunData"
+
 log()  { echo "==> $*"; }
 warn() { echo "⚠️  $*" >&2; }
 die()  { echo "❌ $*" >&2; exit 1; }
@@ -105,7 +114,7 @@ generate_project() {
 
 run_simulator() {
   local sim_name="${SIMULATOR_NAME:-iPhone 17 Pro}"
-  local derived_data="$PROJECT_ROOT/build"
+  local derived_data="$DERIVED_DATA_BASE/simulator"
   local app_path="$derived_data/Build/Products/Debug-iphonesimulator/LifeMidpoint.app"
 
   log "启动本地 AI 后端 (127.0.0.1:$AGENT_PORT) ..."
@@ -226,7 +235,7 @@ run_device() {
 
   local mac_host derived_data app_path health_url
   mac_host="$(scutil --get LocalHostName 2>/dev/null || hostname -s).local"
-  derived_data="$PROJECT_ROOT/build-device"
+  derived_data="$DERIVED_DATA_BASE/device"
   app_path="$derived_data/Build/Products/Debug-iphoneos/LifeMidpoint.app"
   health_url="http://${mac_host}:${AGENT_PORT}/health"
 
