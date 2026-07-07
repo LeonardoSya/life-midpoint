@@ -44,14 +44,7 @@ struct DiaryMemoryDetailView: View {
     }
 
     private var backButton: some View {
-        Button { dismiss() } label: {
-            Image(systemName: "arrow.left")
-                .font(.system(size: 18, weight: .medium))
-                .foregroundStyle(Color.textPrimary)
-                .frame(width: 44, height: 44)
-        }
-        .contentShape(Rectangle())
-        .buttonStyle(.plain)
+        AppBackButton { dismiss() }
         .padding(.leading, 12)
         .padding(.top, 4)
     }

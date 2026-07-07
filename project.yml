@@ -32,6 +32,13 @@ targets:
         # 真机调试时根目录 run.sh device 会通过命令行覆盖成
         # Mac 的局域网 Bonjour 地址, 详见 AgentServerConfig.swift。
         AGENT_SERVER_BASE_URL: http://127.0.0.1:8787
+        # 免费 Apple ID 的开发者 Team ID (真机调试签名用, 模拟器不需要)。
+        # 这是当前这台 Mac 上首次做「一次性配对」时, 在 Xcode 的
+        # Signing & Capabilities 里选定 Team 后, Xcode 自动生成并写回的值。
+        # 换一台 Mac / 换一个 Apple ID 调试, 在 Xcode 里重新选一次 Team 后,
+        # 把这里替换成新生成的 Team ID 即可 (或者用
+        # `DEVELOPMENT_TEAM=新ID ./run.sh device` 临时覆盖, 不用改这个文件)。
+        DEVELOPMENT_TEAM: 69FJSZGB8N
     info:
       path: LifeMidpoint/Generated/Info.plist
       properties:

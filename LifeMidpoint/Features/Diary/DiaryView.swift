@@ -18,6 +18,7 @@ struct DiaryView: View {
     @State private var continuedAfterRoundCount = 0
     @State private var showStampObtained = false
     @State private var path = NavigationPath()
+    @FocusState private var isInputFocused: Bool
 
     private var repo: DiaryRepository { DiaryRepository(context: modelContext) }
 
@@ -110,7 +111,10 @@ struct DiaryView: View {
             }
         }
         .animation(.easeInOut(duration: 0.25), value: isGeneratingSummary)
-        .ignoresSafeArea()
+        // 只忽略刘海/Home 指示条这类"容器"安全区, 保留键盘安全区不忽略,
+        // 这样键盘弹出时系统会自动把整个 ZStack (含输入框) 往上顶,
+        // 不需要手写 NotificationCenter 监听键盘高度.
+        .ignoresSafeArea(.container)
         .toolbar(.hidden, for: .navigationBar)
         .fullScreenCover(isPresented: $showStampObtained) {
             StampObtainedView(stampImageName: "GoldStamp2")
@@ -219,8 +223,19 @@ struct DiaryView: View {
                 .padding(.vertical, 8)
                 .animation(.easeOut(duration: 0.38), value: bubbleItems.map(\.id))
             }
+            .scrollDismissesKeyboard(.interactively)
             .onChange(of: scrollTarget) { _, _ in
                 if let last = bubbleItems.last?.id {
+                    withAnimation(.easeOut(duration: 0.25)) {
+                        proxy.scrollTo(last, anchor: .bottom)
+                    }
+                }
+            }
+            .onChange(of: isInputFocused) { _, focused in
+                // 键盘弹出后可视区域变矮, 顺手把最新一条消息重新滚到底部,
+                // 避免输入框顶上来后反而挡住最后一条消息.
+                guard focused, let last = bubbleItems.last?.id else { return }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     withAnimation(.easeOut(duration: 0.25)) {
                         proxy.scrollTo(last, anchor: .bottom)
                     }
@@ -401,6 +416,9 @@ struct DiaryView: View {
                 .foregroundStyle(Color.dustyPurple)
                 .padding(.leading, 25)
                 .padding(.vertical, 12)
+                .focused($isInputFocused)
+                .submitLabel(.send)
+                .onSubmit { if !inputText.isEmpty { sendMessage() } }
 
             Spacer()
 

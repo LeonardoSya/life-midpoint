@@ -136,19 +136,25 @@ struct PostOfficeView: View {
             .buttonStyle(.plain)
 
             HStack(spacing: 16) {
-                NavigationLink(value: PostOfficeRoute.stampAlbum) {
-                    StampCategoryCard(name: "候鸟归家",
-                                      images: ["MigrationStamp18", "MigrationStamp19"],
-                                      collected: 2, total: 12)
+                // 直接从 StampLibrary 取数, 避免像之前那样在这里单独写一份数字,
+                // 跟集邮册详情页 (StampAlbumView) 各自维护、迟早对不上.
+                if let migration = StampLibrary.allSeries.first(where: { $0.name == "候鸟归家" }) {
+                    NavigationLink(value: PostOfficeRoute.stampAlbum) {
+                        StampCategoryCard(name: migration.name,
+                                          images: migration.stamps.prefix(2).map(\.imageName),
+                                          collected: migration.collectedCount, total: migration.totalCount)
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
 
-                NavigationLink(value: PostOfficeRoute.stampAlbum) {
-                    StampCategoryCard(name: "四时之花",
-                                      images: ["FlowerStamp27", "FlowerStamp28"],
-                                      collected: 1, total: 12)
+                if let flower = StampLibrary.allSeries.first(where: { $0.name == "四时之花" }) {
+                    NavigationLink(value: PostOfficeRoute.stampAlbum) {
+                        StampCategoryCard(name: flower.name,
+                                          images: flower.stamps.prefix(2).map(\.imageName),
+                                          collected: flower.collectedCount, total: flower.totalCount)
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
             }
         }
         .padding(.top, 8)

@@ -95,7 +95,10 @@ struct MainContainerView: View {
             }
         }
         .onAppear { syncAmbient(for: activeModule) }
-        .onChange(of: path.count) { _, count in
+        .onChange(of: path.count) { oldCount, count in
+            #if DEBUG
+            print("🧭 [MainContainerView] path.count \(oldCount) -> \(count), path=\(path)")
+            #endif
             if count == 0 {
                 activeModule = .diary
             }

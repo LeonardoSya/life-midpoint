@@ -144,17 +144,21 @@ enum StampLibrary {
     ]
 
     /// 全部系列
+    ///
+    /// `collectedCount` 目前是演示用的静态数字 (真实解锁应接入 `UserStamp`, 见
+    /// `PostOfficeRepository.hasStamp`), 每个系列只留 2~3 张压底没解锁,
+    /// 方便用户一进集邮册就能看到大部分邮票的彩色效果。
     static let allSeries: [StampSeriesData] = [
         StampSeriesData(name: "人生中点", subtitle: "在抵达之前，先认出自己。",
-                        stamps: midpointStamps, collectedCount: 4),
+                        stamps: midpointStamps, collectedCount: midpointStamps.count - 2),
         StampSeriesData(name: "鎏金时刻", subtitle: "把寻常日子，慢慢收成珍藏。",
-                        stamps: goldStamps, collectedCount: 2),
+                        stamps: goldStamps, collectedCount: goldStamps.count - 3),
         StampSeriesData(name: "候鸟归家", subtitle: "所有远行，终将找到枝头。",
-                        stamps: migrationStamps, collectedCount: 3),
+                        stamps: migrationStamps, collectedCount: migrationStamps.count - 3),
         StampSeriesData(name: "四时之花", subtitle: "花有四时，心有节气。",
-                        stamps: flowerStamps, collectedCount: 1),
+                        stamps: flowerStamps, collectedCount: flowerStamps.count - 3),
         StampSeriesData(name: "童年", subtitle: "很小的东西，装着很大的童年。",
-                        stamps: childhoodStamps, collectedCount: 0),
+                        stamps: childhoodStamps, collectedCount: childhoodStamps.count - 3),
     ]
 
     static var totalCollected: Int {

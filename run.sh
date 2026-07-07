@@ -158,59 +158,49 @@ EOF
 # Step 3b. 真机流程 (无需 Apple 开发者账号, 但需要一次性配对, 见 README「真机调试」)
 # ----------------------------------------------------------------------------
 
-# 从 devicectl 的 JSON 里挑一台已配对的 iOS 设备, 把关键字段回填到几个全局变量里。
+# 从 devicectl 的 JSON 里挑一台已配对的 iOS 设备, 把关键字段回填到几个全局变量里:
+#   DEVICE_ID           devicectl 自己的 identifier, 给 `devicectl device install/launch --device` 用
+#   DEVICE_UDID          硬件 UDID, 给 `xcodebuild -destination platform=iOS,id=...` 用
+#                         (这两个字段格式不同、不能混用, devicectl 命令和 xcodebuild 命令各认各的)
+#   DEVICE_NAME          设备名, 仅用于日志展示
+#   DEVICE_TUNNEL_STATE  是否已建立开发隧道 (connected 才说明真的能直接编译安装)
+# 优先选 tunnelState=connected 的设备(当前正连着的); 多台已配对设备时避免选到一台早已不在身边的旧设备。
 # 找不到则把 DEVICE_ID 留空, 由调用方决定如何提示用户。
 pick_device() {
   local json="$PROJECT_ROOT/tmp/devicectl-list.json"
   mkdir -p "$PROJECT_ROOT/tmp"
   xcrun devicectl list devices --json-output "$json" >/dev/null 2>&1 || true
 
-  DEVICE_ID="$(python3 - "$json" <<'PY'
+  local picked
+  picked="$(python3 - "$json" <<'PY'
 import json, sys
 try:
     data = json.load(open(sys.argv[1]))
 except Exception:
-    print("")
+    print("||||")
     sys.exit()
 devices = data.get("result", {}).get("devices", [])
 paired = [d for d in devices if d.get("connectionProperties", {}).get("pairingState") == "paired"
           and d.get("hardwareProperties", {}).get("platform") == "iOS"]
 if not paired:
-    print("")
-else:
-    print(paired[0]["identifier"])
-PY
-)"
-  DEVICE_NAME="$(python3 - "$json" "$DEVICE_ID" <<'PY'
-import json, sys
-try:
-    data = json.load(open(sys.argv[1]))
-except Exception:
-    print("iPhone")
+    print("||||")
     sys.exit()
-target = sys.argv[2]
-for d in data.get("result", {}).get("devices", []):
-    if d.get("identifier") == target:
-        print(d.get("deviceProperties", {}).get("name", "iPhone"))
-        sys.exit()
-print("iPhone")
+# 优先选当前隧道已连接的设备, 其次退而求其次选第一个已配对的。
+paired.sort(key=lambda d: d.get("connectionProperties", {}).get("tunnelState") != "connected")
+d = paired[0]
+fields = [
+    d.get("identifier", ""),
+    d.get("hardwareProperties", {}).get("udid", ""),
+    d.get("deviceProperties", {}).get("name", "iPhone"),
+    d.get("connectionProperties", {}).get("tunnelState", "unknown"),
+]
+print("|".join(fields))
 PY
 )"
-  DEVICE_TUNNEL_STATE="$(python3 - "$json" "$DEVICE_ID" <<'PY'
-import json, sys
-try:
-    data = json.load(open(sys.argv[1]))
-except Exception:
-    print("unknown")
-    sys.exit()
-target = sys.argv[2]
-for d in data.get("result", {}).get("devices", []):
-    if d.get("identifier") == target:
-        print(d.get("connectionProperties", {}).get("tunnelState", "unknown"))
-        sys.exit()
-print("unknown")
-PY
-)"
+  DEVICE_ID="$(echo "$picked" | cut -d'|' -f1)"
+  DEVICE_UDID="$(echo "$picked" | cut -d'|' -f2)"
+  DEVICE_NAME="$(echo "$picked" | cut -d'|' -f3)"
+  DEVICE_TUNNEL_STATE="$(echo "$picked" | cut -d'|' -f4)"
 }
 
 run_device() {
@@ -252,11 +242,11 @@ run_device() {
     -project LifeMidpoint.xcodeproj \
     -scheme "$SCHEME" \
     -configuration Debug \
-    -destination "platform=iOS,id=$DEVICE_ID" \
+    -destination "platform=iOS,id=$DEVICE_UDID" \
     -derivedDataPath "$derived_data" \
     -allowProvisioningUpdates \
     "AGENT_SERVER_BASE_URL=http://${mac_host}:${AGENT_PORT}" \
-    "${team_args[@]}" \
+    "${team_args[@]+"${team_args[@]}"}" \
     build
 
   [[ -d "$app_path" ]] || die "未找到构建产物: $app_path"

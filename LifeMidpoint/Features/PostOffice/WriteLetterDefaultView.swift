@@ -140,11 +140,7 @@ struct WriteLetterDefaultView: View {
 
     private var header: some View {
         HStack {
-            Button { dismiss() } label: {
-                Image(systemName: "arrow.left")
-                    .font(.system(size: 18))
-                    .foregroundStyle(.black)
-            }
+            AppBackButton(tint: .black) { dismiss() }
             Spacer()
         }
         .padding(.horizontal, 24)

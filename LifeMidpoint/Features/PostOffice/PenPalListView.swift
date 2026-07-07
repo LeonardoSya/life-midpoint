@@ -74,10 +74,11 @@ struct PenPalListView: View {
 
     private var backButton: some View {
         HStack {
-            Button { dismiss() } label: {
-                Image(systemName: "arrow.left")
-                    .font(.system(size: 18))
-                    .foregroundStyle(Color.textPrimary)
+            AppBackButton {
+                #if DEBUG
+                print("🔙 [PenPalListView] backButton tapped, calling dismiss()")
+                #endif
+                dismiss()
             }
             Spacer()
         }
@@ -455,11 +456,7 @@ struct PenPalDetailView: View {
 
     private var backButton: some View {
         HStack {
-            Button { dismiss() } label: {
-                Image(systemName: "arrow.left")
-                    .font(.system(size: 18))
-                    .foregroundStyle(Color.textPrimary)
-            }
+            AppBackButton { dismiss() }
             Spacer()
         }
     }

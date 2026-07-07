@@ -33,11 +33,17 @@ struct WeeklySummaryView: View {
     /// 若返回按钮放在系统 toolbar 里会被一并隐藏、点不到, 因此这里跟其余全屏页
     /// (如 DiaryReviewView / StampAlbumView) 一样用悬浮按钮 + dismiss() 实现.
     private var backButton: some View {
-        Button { dismiss() } label: {
+        Button {
+            #if DEBUG
+            print("🔙 [WeeklySummaryView] backButton tapped, calling dismiss()")
+            #endif
+            dismiss()
+        } label: {
             Image(systemName: "arrow.left")
                 .font(.system(size: 18, weight: .medium))
                 .foregroundStyle(Color.textPrimary)
-                .frame(width: 38, height: 38)
+                .frame(width: 44, height: 44)
+                .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .padding(.leading, 18)

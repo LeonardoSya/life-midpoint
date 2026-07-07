@@ -49,13 +49,7 @@ struct DiarySummaryView: View {
     }
 
     private var backButton: some View {
-        Button { dismiss() } label: {
-            Image(systemName: "arrow.left")
-                .font(.system(size: 18, weight: .medium))
-                .foregroundStyle(Color.textPrimary)
-                .frame(width: 38, height: 38)
-        }
-        .buttonStyle(.plain)
+        AppBackButton { dismiss() }
         .padding(.leading, 18)
         .padding(.top, 16)
     }
