@@ -18,6 +18,7 @@ struct DiaryView: View {
     @State private var continuedAfterRoundCount = 0
     @State private var showStampObtained = false
     @State private var path = NavigationPath()
+    @State private var keyboardHeight: CGFloat = 0
     @FocusState private var isInputFocused: Bool
 
     private var repo: DiaryRepository { DiaryRepository(context: modelContext) }
@@ -86,18 +87,10 @@ struct DiaryView: View {
 
                 Spacer()
 
-                if shouldShowRecordActions {
-                    recordActionBar
-                        .padding(.horizontal, 47)
-                } else {
-                    floatingInputBar
-                        .padding(.horizontal, 24)
-                }
-
-                diaryReviewLink
-                    .padding(.top, 12)
-                    .padding(.bottom, 22)
+                diaryComposer
             }
+            // 保持背景与聊天区域使用完整屏幕尺寸；键盘出现时只移动输入区，
+            // 避免整页重新布局造成背景局部放大和视觉中心偏移。
             .responsiveFill()
 
             if isGeneratingSummary {
@@ -111,10 +104,10 @@ struct DiaryView: View {
             }
         }
         .animation(.easeInOut(duration: 0.25), value: isGeneratingSummary)
-        // 只忽略刘海/Home 指示条这类"容器"安全区, 保留键盘安全区不忽略,
-        // 这样键盘弹出时系统会自动把整个 ZStack (含输入框) 往上顶,
-        // 不需要手写 NotificationCenter 监听键盘高度.
+        // 日记页自行按系统通知中的真实键盘高度压缩前景，避免不同真机环境下
+        // SwiftUI 自动键盘避让与全屏背景 / NavigationStack 组合失效。
         .ignoresSafeArea(.container)
+        .ignoresSafeArea(.keyboard)
         .toolbar(.hidden, for: .navigationBar)
         .fullScreenCover(isPresented: $showStampObtained) {
             StampObtainedView(stampImageName: "GoldStamp2")
@@ -125,6 +118,16 @@ struct DiaryView: View {
         .onDisappear {
             agentReplyTask?.cancel()
             stopLoadingAnimation()
+        }
+        .onReceive(NotificationCenter.default.publisher(
+            for: UIResponder.keyboardWillChangeFrameNotification
+        )) { notification in
+            updateKeyboardHeight(from: notification)
+        }
+        .onReceive(NotificationCenter.default.publisher(
+            for: UIResponder.keyboardWillHideNotification
+        )) { notification in
+            animateKeyboardHeight(to: 0, using: notification)
         }
     }
 
@@ -368,6 +371,26 @@ struct DiaryView: View {
 
     // MARK: - Input Bar (Figma: capsule glass + shadow)
 
+    private var diaryComposer: some View {
+        VStack(spacing: 0) {
+            if shouldShowRecordActions {
+                recordActionBar
+                    .padding(.horizontal, 47)
+            } else {
+                floatingInputBar
+                    .padding(.horizontal, 24)
+            }
+
+            if keyboardHeight == 0 {
+                diaryReviewLink
+                    .padding(.top, 12)
+                    .padding(.bottom, 22)
+            }
+        }
+        .padding(.bottom, keyboardHeight > 0 ? 12 : 0)
+        .offset(y: keyboardHeight > 0 ? -keyboardHeight : 0)
+    }
+
     private var recordActionBar: some View {
         HStack(spacing: 16) {
             Button {
@@ -461,6 +484,23 @@ struct DiaryView: View {
     }
 
     // MARK: - Logic
+
+    private func updateKeyboardHeight(from notification: Notification) {
+        guard let frame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
+            return
+        }
+        let screenHeight = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?
+            .screen.bounds.height ?? frame.maxY
+        animateKeyboardHeight(to: max(0, screenHeight - frame.minY), using: notification)
+    }
+
+    private func animateKeyboardHeight(to height: CGFloat, using notification: Notification) {
+        let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
+            ?? 0.25
+        withAnimation(.easeOut(duration: duration)) {
+            keyboardHeight = height
+        }
+    }
 
     /// 取持久化的最近 session, 没有则新建.
     /// 不再自动播种默认气泡; 旧版本已经写入的默认气泡会在无用户消息时清理掉.

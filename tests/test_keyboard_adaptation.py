@@ -104,6 +104,12 @@ class InputInventoryTests(unittest.TestCase):
     def test_diary_keeps_input_above_keyboard_and_latest_message_visible(self) -> None:
         content = source("LifeMidpoint/Features/Diary/DiaryView.swift")
         self.assertIn(".ignoresSafeArea(.container)", content)
+        self.assertIn(".ignoresSafeArea(.keyboard)", content)
+        self.assertIn(".responsiveFill()", content)
+        self.assertIn(".offset(y: keyboardHeight > 0 ? -keyboardHeight : 0)", content)
+        self.assertIn("if keyboardHeight == 0", content)
+        self.assertIn("UIResponder.keyboardWillChangeFrameNotification", content)
+        self.assertIn("UIResponder.keyboardWillHideNotification", content)
         self.assertIn(".scrollDismissesKeyboard(.interactively)", content)
         self.assertIn(".onChange(of: isInputFocused)", content)
         self.assertIn("proxy.scrollTo(last, anchor: .bottom)", content)
