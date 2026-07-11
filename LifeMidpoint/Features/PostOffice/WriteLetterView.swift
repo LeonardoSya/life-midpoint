@@ -17,6 +17,7 @@ struct WriteLetterView: View {
     @State private var showSentConfirmation = false
     @State private var path = NavigationPath()
     @State private var selectedStamp: StampInfo = StampLibrary.goldStamps[1]
+    @FocusState private var isAliasFocused: Bool
 
     init(presetPenPal: PenPal? = nil) {
         self.presetPenPal = presetPenPal
@@ -58,6 +59,7 @@ struct WriteLetterView: View {
                 }
                 .padding(.horizontal, 24)
             }
+            .scrollDismissesKeyboard(.interactively)
             .background(Color.pageBackground.ignoresSafeArea())
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -187,6 +189,7 @@ struct WriteLetterView: View {
         }
         .contentShape(Rectangle())
         .onTapGesture {
+            isAliasFocused = false
             Haptic.light()
             showFullWriter = true
         }
@@ -218,6 +221,9 @@ struct WriteLetterView: View {
                 .font(AppFont.body(16))
                 .foregroundStyle(Color(hex: 0x57534E))
                 .multilineTextAlignment(.center)
+                .focused($isAliasFocused)
+                .submitLabel(.done)
+                .onSubmit { isAliasFocused = false }
                 .padding(.horizontal, 20)
                 .frame(height: 48)
                 .overlay(
@@ -249,6 +255,7 @@ struct WriteLetterView: View {
 
     private func chipButton(_ text: String, isSelected: Bool, action: @escaping () -> Void) -> some View {
         Button {
+            isAliasFocused = false
             Haptic.light()
             action()
         } label: {
@@ -275,6 +282,7 @@ struct WriteLetterView: View {
     private var completeButton: some View {
         Button {
             guard canSend else { return }
+            isAliasFocused = false
             Haptic.medium()
             path.append(WriteLetterRoute.stampSelection)
         } label: {

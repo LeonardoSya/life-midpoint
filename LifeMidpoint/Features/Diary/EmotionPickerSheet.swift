@@ -97,6 +97,7 @@ struct EmotionPickerSheet: View {
             TextField("自定义", text: $customText)
                 .focused($customFieldFocused)
                 .submitLabel(.done)
+                .onSubmit { customFieldFocused = false }
                 .onChange(of: customText) { _, newValue in
                     if !newValue.isEmpty { selectedName = nil }
                 }
@@ -155,6 +156,7 @@ struct EmotionPickerSheet: View {
 
     private var confirmButton: some View {
         Button {
+            customFieldFocused = false
             let content = EmotionLibrary.content(for: effectiveEmotionName)
             if let onConfirm {
                 onConfirm(content.name, content.icon, intensity)
@@ -174,6 +176,7 @@ struct EmotionPickerSheet: View {
 
     private var skipButton: some View {
         Button {
+            customFieldFocused = false
             if let onSkip { onSkip() } else { dismiss() }
         } label: {
             Text("跳过")

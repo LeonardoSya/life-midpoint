@@ -36,7 +36,7 @@ struct DiarySummaryView: View {
             }
             .responsiveFill()
         }
-        .ignoresSafeArea()
+        .ignoresSafeArea(.container)
         .overlay(alignment: .topLeading) { backButton }
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {

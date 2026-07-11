@@ -63,6 +63,7 @@ struct WriteLetterDefaultView: View {
                         .scrollContentBackground(.hidden)
                         .background(Color.clear)
                         .focused($isFocused)
+                        .scrollDismissesKeyboard(.interactively)
                         .padding(.horizontal, 32)
                         .padding(.top, referenceImage == nil ? 70 : 16)
 
@@ -96,6 +97,14 @@ struct WriteLetterDefaultView: View {
                     .padding(.bottom, 24)
             }
             .responsiveFill()
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("完成") { isFocused = false }
+                    .font(AppFont.body(15))
+                    .foregroundStyle(Color.inkBrownDark)
+            }
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {

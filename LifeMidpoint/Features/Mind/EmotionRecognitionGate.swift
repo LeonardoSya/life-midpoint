@@ -48,6 +48,7 @@ struct EmotionRecognitionGate: View {
             .padding(.horizontal, 12)
             .padding(.vertical, 8)
         }
+        .scrollDismissesKeyboard(.interactively)
         .background(Color.pageBackground.ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
     }

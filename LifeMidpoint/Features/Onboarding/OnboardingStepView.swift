@@ -101,8 +101,7 @@ struct OnboardingStepView: View {
             .frame(width: geo.size.width, height: geo.size.height)
             .clipped()
         }
-        .ignoresSafeArea()
-        .ignoresSafeArea(.keyboard)
+        .ignoresSafeArea(.container)
         // 仅在"无 CTA + 无输入"step 启用整页 tap 推进.
         // step 14 (CTA) / step 10 (profile 输入) 不挂 tap gesture,
         // 避免抢走 SlideToConfirmButton 的 DragGesture 与 TextField focus.

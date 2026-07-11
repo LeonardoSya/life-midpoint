@@ -5,39 +5,57 @@ struct LoginView: View {
     @State private var phoneNumber = ""
     @State private var verificationCode = ""
     @State private var agreedToTerms = false
+    @FocusState private var focusedField: Field?
+
+    private enum Field: Hashable {
+        case phone
+        case code
+    }
 
     var body: some View {
         ZStack {
             backgroundLayer
 
-            VStack(spacing: 0) {
-                Spacer(minLength: 0)
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 0) {
+                    Spacer(minLength: 32)
 
-                titleSection
+                    titleSection
 
-                Spacer()
-                    .frame(height: 64)
+                    Spacer()
+                        .frame(height: 64)
 
-                inputSection
+                    inputSection
 
-                Spacer()
-                    .frame(height: 32)
+                    Spacer()
+                        .frame(height: 32)
 
-                loginButton
+                    loginButton
 
-                termsSection
-                    .padding(.top, AppSpacing.lg)
+                    termsSection
+                        .padding(.top, AppSpacing.lg)
 
-                Spacer()
-                    .frame(height: 56)
+                    Spacer()
+                        .frame(height: 56)
 
-                alternativeLoginSection
+                    alternativeLoginSection
 
-                Spacer(minLength: 0)
+                    Spacer(minLength: 32)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 40)
+                .padding(.vertical, 24)
             }
-            .padding(.horizontal, 40)
-            .padding(.vertical, 24)
+            .scrollDismissesKeyboard(.interactively)
             .responsiveFill()
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("完成") { focusedField = nil }
+                    .font(AppFont.body(15))
+                    .foregroundStyle(Color.textPrimary)
+            }
         }
     }
 
@@ -71,6 +89,7 @@ struct LoginView: View {
                 .font(AppFont.body(14))
                 .foregroundStyle(Color.textPrimary)
                 .keyboardType(.phonePad)
+                .focused($focusedField, equals: .phone)
                 .padding(.horizontal, AppSpacing.lg)
                 .frame(height: AppSpacing.buttonHeight)
                 .background(Color.white, in: RoundedRectangle(cornerRadius: AppSpacing.cardCornerRadius))
@@ -81,6 +100,7 @@ struct LoginView: View {
                     .font(AppFont.body(14))
                     .foregroundStyle(Color.textPrimary)
                     .keyboardType(.numberPad)
+                    .focused($focusedField, equals: .code)
 
                 Button("获取验证码") {
                     // TODO: send verification code
@@ -99,6 +119,7 @@ struct LoginView: View {
 
     private var loginButton: some View {
         Button {
+            focusedField = nil
             appState.completeLogin()
         } label: {
             Text("登入")
